@@ -1,0 +1,59 @@
+/*
+Theme Name: Source New
+Theme URI: http://thelasource.com
+Description: New Theme For The La Source Newspaper
+Author: The La Source Web Team
+Author URI: http://thelasource.com
+Version: 0.1
+
+License:
+License URI:
+
+General comments (optional).
+*/
+body{
+	background: #EEE;
+	color:#333;
+}
+
+strong {}
+
+span {
+	font-weight: bold;
+	font-style: italic;
+}	
+
+#shell{
+	max-width:900px;
+	margin: 50px auto 50px;
+	background: #FFF;
+	padding: 10px;
+	border:1px solid #CCC;
+}
+
+
+#sidebar{
+	float: right;
+	width: 30%;
+}
+
+#content{
+	float: left;
+	width: 70%;
+}
+
+#footer{
+	clear:both;
+}
+
+@media (max-width: 767px) { 
+	
+	#sidebar,
+	#content{
+		width: 100%;
+	}
+	
+	
+	
+}
+
