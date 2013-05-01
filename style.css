@@ -51,6 +51,7 @@ span {
 	#sidebar,
 	#content{
 		width: 100%;
+		background: red;
 	}
 	
 	
