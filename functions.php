@@ -333,3 +333,39 @@ function expound_shortcode_atts_caption( $attr ) {
 	return $attr;
 }
 add_filter( 'shortcode_atts_caption', 'expound_shortcode_atts_caption' );
+
+if ( ! function_exists('new_source_register_edition') ) {
+	// Register Custom Taxonomy
+	function new_source_register_edition()  {
+	
+		$labels = array(
+			'name'                       => _x( 'editions', 'Taxonomy General Name', 'new-source' ),
+			'singular_name'              => _x( 'edition', 'Taxonomy Singular Name', 'new-source' ),
+			'menu_name'                  => __( 'Edition', 'new-source' ),
+			'all_items'                  => __( 'All Editions', 'new-source' ),
+			'parent_item'                => __( 'Parent Edition', 'new-source' ),
+			'parent_item_colon'          => __( 'Parent Edition:', 'new-source' ),
+			'new_item_name'              => __( 'New Edition Name', 'new-source' ),
+			'add_new_item'               => __( 'Add New Edition', 'new-source' ),
+			'edit_item'                  => __( 'Edit Edition', 'new-source' ),
+			'update_item'                => __( 'Update Edition', 'new-source' ),
+			'separate_items_with_commas' => __( 'Separate editions with commas', 'new-source' ),
+			'search_items'               => __( 'Search edition', 'new-source' ),
+			'add_or_remove_items'        => __( 'Add or remove edition', 'new-source' ),
+			'choose_from_most_used'      => __( 'Choose from the most used edition', 'new-source' ),
+		);
+		$args = array(
+			'labels'                     => $labels,
+			'hierarchical'               => true,
+			'public'                     => true,
+			'show_ui'                    => true,
+			'show_admin_column'          => true,
+			'show_in_nav_menus'          => true,
+			'show_tagcloud'              => false,
+		);
+		register_taxonomy( 'edition', 'post', $args );
+	
+	}
+	// Hook into the 'init' action
+	add_action( 'init', 'new_source_register_edition', 0 );
+}
