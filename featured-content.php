@@ -51,4 +51,5 @@
 	<?php endwhile; ?>
 </div><!-- .featured-content-secondary -->
 <?php endif; // have_posts() inner ?>
+
 <?php endif; // have_posts() ?>

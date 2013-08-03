@@ -9,10 +9,22 @@
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
+<?php 
+
+global $edition, $edition_link;
+
+$edition = get_term_by( 'id', get_theme_mod('home_edition'),'edition');
+$volume  = get_term_by( 'id', $edition->parent, 'edition');
+
+$edition_link = get_term_link( $edition );
+$edition_name = ( is_object($volume) ? $volume->name.", ".$edition->name." - ".$edition->description : $edition->name." - ".$edition->description) ; 
+// $edition->name
+// $edition->description
+// $edition->slug		
+			?>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title><?php wp_title( '|', true, 'right' ); ?></title>
-<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+<title><?php wp_title( '|', true, 'right' ); echo " | ".$edition_name; ?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <!--[if lt IE 9]>
@@ -23,14 +35,12 @@
 </head>
 
 <body <?php body_class(); ?>>
-
 <!-- Ad Place before Header -->
  <?php if ( is_active_sidebar( 'header-widget-area' ) ) : ?>
 			<div class="header-adplace">
                         <?php if ( !dynamic_sidebar( 'header-widget-area' ) )?>
-                    	</div>
+           </div>
 <?php endif; ?>
-
 <div id="page" class="hfeed site">
 	<?php do_action( 'before' ); ?>
 	<header id="masthead" class="site-header" role="banner">
