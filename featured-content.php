@@ -34,7 +34,7 @@
 				<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
 
 				<?php if ( get_the_category() ) : ?>
-				<span class="entry-thumbnail-category"><?php the_category( ' / ' ); ?></span>
+				<span class="entry-thumbnail-category"><?php the_category( ' // ' ); ?></span>
 				<?php endif; // get_the_category() ?>
 			</div>
 			<?php endif; ?>
