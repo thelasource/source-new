@@ -9,9 +9,22 @@
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
+<?php 
+
+global $edition, $edition_link;
+
+$edition = get_term_by( 'id', get_theme_mod('home_edition'),'edition');
+$volume  = get_term_by( 'id', $edition->parent, 'edition');
+
+$edition_link = get_term_link( $edition );
+$edition_name = ( is_object($volume) ? $volume->name.", ".$edition->name." - ".$edition->description : $edition->name." - ".$edition->description) ; 
+// $edition->name
+// $edition->description
+// $edition->slug		
+			?>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title><?php wp_title( '|', true, 'right' ); ?></title>
+<title><?php wp_title( '|', true, 'right' ); echo " | ".$edition_name; ?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <!--[if lt IE 9]>

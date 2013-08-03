@@ -369,3 +369,51 @@ if ( ! function_exists('new_source_register_edition') ) {
 	// Hook into the 'init' action
 	add_action( 'init', 'new_source_register_edition', 0 );
 }
+
+
+
+
+
+
+
+/**
+ * new_source_customize_register function.
+ * 
+ * @access public
+ * @param mixed $wp_customize
+ * @return void
+ */
+function new_source_customize_register( $wp_customize ) {
+
+	require_once( 'inc/class-taxonomy_dropdown_custom_control.php' );
+	
+	$wp_customize->add_section(
+		'my_theme_blog_home_edition', array(
+			'title' => 'Home Edition',
+			'priority' => 36,
+			'args' => array(), // arguments for wp_dropdown_categories function..., optional
+		)
+	);
+	
+	$wp_customize->add_setting(
+		'home_edition', array(
+			'default' => get_option( 'home_edition', '' ),
+		)
+	);
+	
+	$wp_customize->add_control(
+		new Taxonomy_Dropdown_Custom_Control(
+			$wp_customize, 'home_edition', array(
+				'label' => __( 'Current Edition', 'textdomain' ),
+				'section' => 'my_theme_blog_home_edition',
+				'settings' => 'home_edition',
+			)
+		)
+	);
+	
+	return $wp_customize;
+}
+
+add_action( 'customize_register', 'new_source_customize_register' );
+
+
