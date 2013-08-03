@@ -12,6 +12,7 @@
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title><?php wp_title( '|', true, 'right' ); ?></title>
+<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <!--[if lt IE 9]>
@@ -22,6 +23,14 @@
 </head>
 
 <body <?php body_class(); ?>>
+
+<!-- Ad Place before Header -->
+ <?php if ( is_active_sidebar( 'header-widget-area' ) ) : ?>
+			<div class="header-adplace">
+                        <?php if ( !dynamic_sidebar( 'header-widget-area' ) )?>
+                    	</div>
+<?php endif; ?>
+
 <div id="page" class="hfeed site">
 	<?php do_action( 'before' ); ?>
 	<header id="masthead" class="site-header" role="banner">

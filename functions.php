@@ -177,6 +177,19 @@ endif;
  * Register widgetized area and update sidebar with default widgets
  */
 function expound_widgets_init() {
+
+// Area located before the header, use for ad.
+	register_sidebar( array(
+		'name' => __( 'Header Ad Place' ),
+		'id' => 'header-widget-area',
+		'description' => __( 'An ad place, max width 728px' ),
+		'before_widget' => '',
+		'after_widget' => '',
+		'before_title' => '<span class="no-title">',
+		'after_title' => '</span>',
+	) );
+
+// Sidebar from Theme 
 	register_sidebar( array(
 		'name'          => __( 'Sidebar', 'expound' ),
 		'id'            => 'sidebar-1',
@@ -185,6 +198,40 @@ function expound_widgets_init() {
 		'before_title'  => '<h1 class="widget-title">',
 		'after_title'   => '</h1>',
 	) );
+
+// Footer1 from Theme 
+	register_sidebar( array(
+		'name'          => __( 'Footer1' ),
+		'id'            => 'footer-1',
+		'description' => __( 'footer1 widget area' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h1 class="widget-title">',
+		'after_title'   => '</h1>',
+	) );
+
+// Footer2 from Theme 
+	register_sidebar( array(
+		'name'          => __( 'Footer2' ),
+		'id'            => 'footer-2',
+		'description' => __( 'footer2 widget area' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h1 class="widget-title">',
+		'after_title'   => '</h1>',
+	) );
+
+// Footer3 from Theme 
+	register_sidebar( array(
+		'name'          => __( 'Footer3' ),
+		'id'            => 'footer-3',
+		'description' => __( 'footer3 widget area' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h1 class="widget-title">',
+		'after_title'   => '</h1>',
+	) );
+
 }
 add_action( 'widgets_init', 'expound_widgets_init' );
 

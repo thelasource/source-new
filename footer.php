@@ -12,7 +12,9 @@
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="site-info">
-			<?php do_action( 'expound_credits' ); ?>
+			<?php if ( dynamic_sidebar('footer-1') ) : else : endif; ?>
+			<?php if ( dynamic_sidebar('footer-2') ) : else : endif; ?>
+			<?php if ( dynamic_sidebar('footer-3') ) : else : endif; ?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
