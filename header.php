@@ -21,7 +21,7 @@ $edition_name = ( is_object($volume) ? $volume->name.", ".$edition->name." - ".$
 // $edition->name
 // $edition->description
 // $edition->slug		
-			?>
+		?>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title><?php wp_title( '|', true, 'right' ); echo " | ".$edition_name; ?></title>
@@ -30,7 +30,7 @@ $edition_name = ( is_object($volume) ? $volume->name.", ".$edition->name." - ".$
 <!--[if lt IE 9]>
 <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
 <![endif]-->
-
+<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
 <?php wp_head(); ?>
 </head>
 
