@@ -20,13 +20,13 @@ pre {
   max-width: 100%;
 }
 a {
-  color: #117bb8;
+  color: #DF212B;
 }
 a:visited {
-  color: #117bb8;
+  color: #DF212B;
 }
 a:active {
-  color: #117bb8;
+  color: #DF212B;
 }
 a:hover {
   color: #3a3a3a;
@@ -34,22 +34,35 @@ a:hover {
 #page {
   background: white;
   width: 1020px;
-  margin: 40px auto;
+  margin: 20px auto;
 }
 .site-footer {
   clear: both;
   padding: 40px 40px;
   color: #aaaaaa;
 }
+.site-footer h1 {
+	text-transform:uppercase;
+	font-size:16px;
+}
+.site-footer ul li {
+list-style-type: square;
+margin: 0px;
+}
 .site-footer a {
-  color: #aaaaaa;
+  color: #fff;
 }
 .site-footer a:hover {
-  color: #117bb8;
+  color: #DF212B;
 }
 .site-header .site-branding {
   position: relative;
   min-height: 154px;
+}
+.site-info {
+	background-color:#888;
+	color:#fff;
+	padding: 10px;
 }
 .site-title-group {
   position: absolute;
@@ -66,7 +79,7 @@ a:hover {
   color: #3a3a3a;
 }
 .site-title a:hover {
-  color: #117bb8;
+  color: #167787;
 }
 .site-title a {
   display: block;
@@ -76,6 +89,11 @@ a:hover {
   font-weight: 300;
   color: #878787;
 }
+
+.header-adplace {background-color:#fff; width: 728px; height:90px; margin: 20px auto;}
+.header-adplace img {display: block; margin-bottom: 10px;}
+.no-title {display: none;}
+
 .expound-custom-header,
 .expound-custom-header img {
   display: block;
@@ -133,7 +151,10 @@ a:hover {
   background: #117bb8;
 }
 .navigation-main {
-  background: #3a3a3a;
+  background: #167787;
+  font-family: 'Oswald', Arial, sans-serif;
+  text-transform: uppercase;
+  font-size: 14px;
 }
 .navigation-main ul {
   margin: 0 30px;
@@ -144,7 +165,7 @@ a:hover {
   position: relative;
 }
 .navigation-main li {
-  background: #3a3a3a;
+  background: #167787;
 }
 .navigation-main li:hover {
   background: #474747;
@@ -155,7 +176,7 @@ a:hover {
 .navigation-main ul > .current-menu-ancestor,
 .navigation-main ul > .current-menu-parent,
 .navigation-main ul > .current-post-parent {
-  background: #117bb8;
+  background: #135e6b;
 }
 .navigation-main ul > .current_page_item:hover,
 .navigation-main ul > .current-menu-item:hover,
@@ -163,7 +184,7 @@ a:hover {
 .navigation-main ul > .current-menu-ancestor:hover,
 .navigation-main ul > .current-menu-parent:hover,
 .navigation-main ul > .current-post-parent:hover {
-  background: #138bcf;
+  background: #135e6b;
 }
 .navigation-main ul > .current_page_item:hover a:after,
 .navigation-main ul > .current-menu-item:hover a:after,
@@ -171,7 +192,7 @@ a:hover {
 .navigation-main ul > .current-menu-ancestor:hover a:after,
 .navigation-main ul > .current-menu-parent:hover a:after,
 .navigation-main ul > .current-post-parent:hover a:after {
-  border-top-color: #138bcf;
+  border-top-color: #135e6b;
 }
 .navigation-main ul > .current_page_item ~ .current_page_item a,
 .navigation-main ul > .current-menu-item ~ .current-menu-item a,
@@ -196,7 +217,7 @@ a:hover {
   font-size: 0px;
   line-height: 0%;
   width: 0px;
-  border-top: 6px solid #117bb8;
+  border-top: 6px solid #135e6b;
   border-left: 6px solid transparent;
   border-right: 6px solid transparent;
   position: absolute;
@@ -265,7 +286,7 @@ a:hover {
 }
 #primary {
   float: left;
-  width: 740px;
+  width: 660px;
   margin-right: 10px;
 }
 .site-intro {
@@ -274,7 +295,7 @@ a:hover {
   padding-left: 40px;
   padding-right: 40px;
   background: #ffffff url('images/absurdidad.png') 0 0 repeat;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: 'Oswald', Arial, sans-serif;
   font-size: 20px;
   line-height: 28px;
 }
@@ -286,7 +307,7 @@ a:hover {
   background: #ffffff url('images/absurdidad.png') 0 0 repeat;
 }
 .page-header h1 {
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: 'Oswald', Arial, sans-serif;
   font-size: 20px;
   line-height: 28px;
 }
@@ -344,13 +365,13 @@ a:hover {
 }
 #secondary {
   float: right;
-  width: 260px;
+  width: 340px;
   margin-left: 10px;
 }
 h1,
 h2,
 h3 {
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: 'Oswald', Arial, sans-serif;
 }
 .site-content .entry-content h1,
 .site-content .comment-content h1,
@@ -470,7 +491,7 @@ h3 {
   color: #3a3a3a;
 }
 .site-content .entry-title a:hover {
-  color: #117bb8;
+  color: #DF212B;
 }
 .site-content .entry-meta {
   font-size: 12px;
@@ -482,7 +503,7 @@ h3 {
   text-decoration: none;
 }
 .site-content .entry-meta a:hover {
-  color: #117bb8;
+  color: #DF212B;
 }
 .site-content .entry-content,
 .site-content .entry-header,
@@ -553,7 +574,7 @@ h3 {
   color: #3a3a3a;
 }
 .featured-content .entry-title a:hover {
-  color: #117bb8;
+  color: #DF212B;
 }
 .featured-content .has-post-thumbnail .entry-thumbnail,
 .featured-content .has-post-thumbnail .entry-thumbnail a,
@@ -608,13 +629,13 @@ h3 {
   color: #3a3a3a;
 }
 .featured-content-secondary .entry-title a:hover {
-  color: #117bb8;
+  color: #DF212B;
 }
 article:hover .entry-thumbnail img {
   opacity: 0.9;
 }
 article:hover .entry-title a {
-  color: #117bb8;
+  color: #DF212B;
 }
 .entry-thumbnail {
   position: relative;
@@ -627,18 +648,18 @@ article:hover .entry-title a {
 .entry-thumbnail-category {
   position: absolute;
   left: -6px;
-  top: 8px;
-  background: #3a3a3a;
+  top: 92px;
+  background: #167787;
   padding: 2px 8px;
-  font-size: 8px;
+  font-size: 9px;
   text-transform: uppercase;
-  color: #777;
+  color: #DF212B;
 }
 .entry-thumbnail-category:hover {
-  background: #117bb8;
+  background: #135e6b;
 }
 .entry-thumbnail-category:hover:before {
-  border-top: 6px solid #0d5c89;
+  border-top: 6px solid #000;
 }
 .entry-thumbnail-category a {
   color: white;
@@ -649,7 +670,7 @@ article:hover .entry-title a {
   font-size: 0px;
   line-height: 0%;
   width: 0px;
-  border-top: 6px solid #212121;
+  border-top: 6px solid #135e6b;
   border-left: 6px solid transparent;
   position: absolute;
   left: 0px;
@@ -732,7 +753,7 @@ a.button-primary,
 .wpm-button-primary,
 a.wpm-button-primary {
   display: inline-block;
-  background: #117bb8;
+  background: #167787;
   color: white;
   text-decoration: none;
   padding: 10px;
@@ -765,7 +786,7 @@ input[type="submit"]:active,
 a.button-primary:active,
 .wpm-button-primary:active,
 a.wpm-button-primary:active {
-  background: #138bcf;
+  background: #DF212B;
 }
 .button,
 a.button,
@@ -856,7 +877,7 @@ a.wpm-button:hover {
   display: none;
 }
 .comments-area footer .comment-author {
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: 'Oswald', Arial, sans-serif;
   font-size: 20px;
   line-height: 28px;
 }
