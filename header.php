@@ -57,6 +57,24 @@ $edition_name = ( is_object($volume) ? $volume->name.", ".$edition->name." - ".$
 				</a>
 			<?php endif; ?>
 		</div>
+		<div>
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>"> English </a> 
+        	<a class='expand-archive'> Click for Archive</a>
+        	<form method="post" class='archive'>
+            	Volume: 
+            	<select name="volume">
+	                <option value="2012">2012</option>
+	                <option value="2011">2011</option>
+            	</select>
+            	Issue:  
+	            <select name="issue">
+	                <option value="July">July</option>
+	                <option value="June">June</option>
+	                <option value="May">May</option>
+	            </select>
+            <input id='archive_submit' type="submit" value="Get issue">
+        	</form>
+		</div>
 
 		<nav id="site-navigation" class="navigation-main" role="navigation">
 			<h1 class="menu-toggle"><?php _e( 'Menu', 'expound' ); ?></h1>

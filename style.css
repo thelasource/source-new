@@ -582,3 +582,12 @@ object {
 .infinity-end.neverending .site-footer {
 	display: block;
 }
+
+/* First version of the style for the collapsible archive form */
+form.archive {
+    display:none;
+    margin:0;
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-bottom:20px;
+}
