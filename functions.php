@@ -451,3 +451,7 @@ if ( ! function_exists('new_source_register_edition') ) {
 	// Hook into the 'init' action
 	add_action( 'init', 'new_source_register_edition', 0 );
 }
+
+function new_source_display_edition($edition) {
+	
+}

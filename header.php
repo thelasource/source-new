@@ -17,7 +17,7 @@ $edition = get_term_by( 'id', get_theme_mod('home_edition'),'edition');
 $volume  = get_term_by( 'id', $edition->parent, 'edition');
 
 $edition_link = get_term_link( $edition );
-$edition_name = ( is_object($volume) ? $volume->name.", ".$edition->name." - ".$edition->description : $edition->name." - ".$edition->description) ; 
+$edition_name = ( is_object($volume) ? $volume->name.", ".$edition->name." - ".$edition->description : $edition->name." - ".$edition->description ); 
 // $edition->name
 // $edition->description
 // $edition->slug		
