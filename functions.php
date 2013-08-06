@@ -65,8 +65,8 @@ function expound_setup() {
 	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
 	 */
 	add_theme_support( 'post-thumbnails' );
-	set_post_thumbnail_size( 220, 126, true );
-	add_image_size( 'expound-featured', 460, 260, true );
+	set_post_thumbnail_size( 220, 131, true );
+	add_image_size( 'expound-featured', 420, 250, true );
 	add_image_size( 'expound-mini', 50, 50, true );
 
 	/**
@@ -93,8 +93,8 @@ function expound_setup() {
 	 */
 	add_theme_support( 'custom-header', array(
 		'default-text-color'     => '3a3a3a',
-		'width'                  => 1020,
-        'height'                 => 154,
+		'width'                  => 274,
+        'height'                 => 120,
         'flex-height'            => true,
         'wp-head-callback'       => 'expound_header_style',
         'admin-head-callback'    => 'expound_admin_header_style',
@@ -183,6 +183,17 @@ function expound_widgets_init() {
 		'name' => __( 'Header Ad Place' ),
 		'id' => 'header-widget-area',
 		'description' => __( 'An ad place, max width 728px' ),
+		'before_widget' => '',
+		'after_widget' => '',
+		'before_title' => '<span class="no-title">',
+		'after_title' => '</span>',
+	) );
+
+// Featured widget area, use for ad.
+	register_sidebar( array(
+		'name' => __( 'Featured Ad Place' ),
+		'id' => 'featured-widget-area',
+		'description' => __( 'An ad place, width 300px and height 250px' ),
 		'before_widget' => '',
 		'after_widget' => '',
 		'before_title' => '<span class="no-title">',
