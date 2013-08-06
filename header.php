@@ -17,7 +17,7 @@ $edition = get_term_by( 'id', get_theme_mod('home_edition'),'edition');
 $volume  = get_term_by( 'id', $edition->parent, 'edition');
 
 $edition_link = get_term_link( $edition );
-$edition_name = ( is_object($volume) ? $volume->name.", ".$edition->name." - ".$edition->description : $edition->name." - ".$edition->description) ; 
+$edition_name = ( is_object($volume) ? $volume->name.", ".$edition->name." - ".$edition->description : $edition->name." | ".$edition->description) ; 
 // $edition->name
 // $edition->description
 // $edition->slug		
@@ -30,17 +30,26 @@ $edition_name = ( is_object($volume) ? $volume->name.", ".$edition->name." - ".$
 <!--[if lt IE 9]>
 <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
 <![endif]-->
-<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
+<link rel="icon" type="image/png" href="/wp-content/uploads/2013/08/source_icon_green.png" />
 <?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
-<!-- Ad Place before Header -->
- <?php if ( is_active_sidebar( 'header-widget-area' ) ) : ?>
-			<div class="header-adplace">
-                        <?php if ( !dynamic_sidebar( 'header-widget-area' ) )?>
-           </div>
-<?php endif; ?>
+<!--Top Bar -->
+<div id="top-bar" class="topbar">
+	<div id="topbar-content">
+	<div id="topbar-left" class="topbar-left">
+	<img src="/wp-content/uploads/2013/08/source_icon_white.png"/>
+	<span class="topbar-language"><a href="/en/">ENGLISH</a></span> &middot; <span class="topbar-edition"><a href="#"><?php echo $edition_name; ?></a></span></div>
+	<div id="topbar-right" class="topbar-right">retrouvez-nous:
+		<a href="http://www.facebook.com/thelasource" target="_blank"><img src="http://localhost/wp-content/uploads/2013/08/f.png"/></a>
+		<a href="http://twitter.com/thelasource" target="_blank"><img src="http://localhost/wp-content/uploads/2013/08/t.png"/></a>
+		<a href="http://plus.google.com/" target="_blank"><img src="http://localhost/wp-content/uploads/2013/08/g.png"/></a>
+		<a href="/feed/rss2/" target="_blank"><img src="http://localhost/wp-content/uploads/2013/08/rss.png"/></a>
+	</div>
+	</div>
+</div>
 <div id="page" class="hfeed site">
 	<?php do_action( 'before' ); ?>
 	<header id="masthead" class="site-header" role="banner">
@@ -56,6 +65,14 @@ $edition_name = ( is_object($volume) ? $volume->name.", ".$edition->name." - ".$
 					<img src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="" />
 				</a>
 			<?php endif; ?>
+<!-- Header Ad Place -->
+ <?php if ( is_active_sidebar( 'header-widget-area' ) ) : ?>
+			<div id="header-ad" class="header-adplace">
+                        <?php if ( !dynamic_sidebar( 'header-widget-area' ) )?>
+           </div>
+<?php endif; ?>
+
+
 		</div>
 
 		<nav id="site-navigation" class="navigation-main" role="navigation">
