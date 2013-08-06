@@ -40,7 +40,22 @@ $edition_name = ( is_object($volume) ? $volume->name.", ".$edition->name." - ".$
 	<div id="topbar-content">
 	<div id="topbar-left" class="topbar-left">
 	<img src="/wp-content/uploads/2013/08/source_icon_white.png"/>
-	<span class="topbar-language"><a href="/en/">ENGLISH</a></span> &middot; <span class="topbar-edition"><a href="#"><?php echo $edition_name; ?></a></span></div>
+	<span class="topbar-language"><a href="<?php echo esc_url( home_url( '/' ) ); ?>">ENGLISH</a></span> &middot; <span class="topbar-edition"><a class='expand-archive'><?php echo $edition_name; ?></a></span>
+<form method="post" class='archive'>
+            	Volume: 
+            	<select name="volume">
+	                <option value="2012">2012</option>
+	                <option value="2011">2011</option>
+            	</select>
+            	Issue:  
+	            <select name="issue">
+	                <option value="July">July</option>
+	                <option value="June">June</option>
+	                <option value="May">May</option>
+	            </select>
+            <input id='archive_submit' type="submit" value="Get issue">
+        	</form>
+</div>
 	<div id="topbar-right" class="topbar-right">retrouvez-nous:
 		<a href="http://www.facebook.com/thelasource" target="_blank"><img src="http://localhost/wp-content/uploads/2013/08/f.png"/></a>
 		<a href="http://twitter.com/thelasource" target="_blank"><img src="http://localhost/wp-content/uploads/2013/08/t.png"/></a>
@@ -71,24 +86,7 @@ $edition_name = ( is_object($volume) ? $volume->name.", ".$edition->name." - ".$
            </div>
 <?php endif; ?>
 		</div>
-		<div>
-			<a href="<?php echo esc_url( home_url( '/' ) ); ?>"> English </a> 
-        	<a class='expand-archive'> Click for Archive</a>
-        	<form method="post" class='archive'>
-            	Volume: 
-            	<select name="volume">
-	                <option value="2012">2012</option>
-	                <option value="2011">2011</option>
-            	</select>
-            	Issue:  
-	            <select name="issue">
-	                <option value="July">July</option>
-	                <option value="June">June</option>
-	                <option value="May">May</option>
-	            </select>
-            <input id='archive_submit' type="submit" value="Get issue">
-        	</form>
-		</div>
+		
 
 		<nav id="site-navigation" class="navigation-main" role="navigation">
 			<h1 class="menu-toggle"><?php _e( 'Menu', 'expound' ); ?></h1>
