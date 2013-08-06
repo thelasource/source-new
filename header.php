@@ -17,7 +17,7 @@ $edition = get_term_by( 'id', get_theme_mod('home_edition'),'edition');
 $volume  = get_term_by( 'id', $edition->parent, 'edition');
 
 $edition_link = get_term_link( $edition );
-$edition_name = ( is_object($volume) ? $volume->name.", ".$edition->name." - ".$edition->description : $edition->name." | ".$edition->description) ; 
+$edition_name = ( is_object($volume) ? $volume->name.", ".$edition->name." - ".$edition->description : $edition->name." - ".$edition->description ); 
 // $edition->name
 // $edition->description
 // $edition->slug		
@@ -30,8 +30,7 @@ $edition_name = ( is_object($volume) ? $volume->name.", ".$edition->name." - ".$
 <!--[if lt IE 9]>
 <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
 <![endif]-->
-<link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
-<link rel="icon" type="image/png" href="/wp-content/uploads/2013/08/source_icon_green.png" />
+<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
 <?php wp_head(); ?>
 </head>
 
@@ -65,14 +64,30 @@ $edition_name = ( is_object($volume) ? $volume->name.", ".$edition->name." - ".$
 					<img src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="" />
 				</a>
 			<?php endif; ?>
-<!-- Header Ad Place -->
+            <!-- Header Ad Place -->
  <?php if ( is_active_sidebar( 'header-widget-area' ) ) : ?>
 			<div id="header-ad" class="header-adplace">
                         <?php if ( !dynamic_sidebar( 'header-widget-area' ) )?>
            </div>
 <?php endif; ?>
-
-
+		</div>
+		<div>
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>"> English </a> 
+        	<a class='expand-archive'> Click for Archive</a>
+        	<form method="post" class='archive'>
+            	Volume: 
+            	<select name="volume">
+	                <option value="2012">2012</option>
+	                <option value="2011">2011</option>
+            	</select>
+            	Issue:  
+	            <select name="issue">
+	                <option value="July">July</option>
+	                <option value="June">June</option>
+	                <option value="May">May</option>
+	            </select>
+            <input id='archive_submit' type="submit" value="Get issue">
+        	</form>
 		</div>
 
 		<nav id="site-navigation" class="navigation-main" role="navigation">
