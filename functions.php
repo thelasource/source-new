@@ -65,8 +65,8 @@ function expound_setup() {
 	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
 	 */
 	add_theme_support( 'post-thumbnails' );
-	set_post_thumbnail_size( 220, 131, true );
-	add_image_size( 'expound-featured', 420, 250, true );
+	set_post_thumbnail_size( 220, 126, true );
+	add_image_size( 'expound-featured', 460, 260, true );
 	add_image_size( 'expound-mini', 50, 50, true );
 
 	/**
@@ -85,7 +85,7 @@ function expound_setup() {
 	 * Enable support for Custom Background
 	 */
 	add_theme_support( 'custom-background', array(
-		'default-color' => '333333',
+		'default-color' => 'f2f2f2',
 	) );
 
 	/**
@@ -256,6 +256,11 @@ function expound_scripts() {
 	wp_enqueue_script( 'expound-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
 	wp_enqueue_script( 'expound-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
+
+	wp_enqueue_script(
+    'expand-archive',
+    get_template_directory_uri() . '/js/archive.js',
+    array('jquery'));
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -456,4 +461,8 @@ if ( ! function_exists('new_source_register_edition') ) {
 	}
 	// Hook into the 'init' action
 	add_action( 'init', 'new_source_register_edition', 0 );
+}
+
+function new_source_display_edition($edition) {
+	
 }
