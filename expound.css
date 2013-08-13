@@ -31,10 +31,11 @@ a:active {
 a:hover {
   color: #3a3a3a;
 }
+#topbar-content { width: 1000px; margin:auto; }
 #page {
   background: white;
   width: 1020px;
-  margin: 20px auto;
+  margin: 36px auto 20px;
 }
 .site-footer {
   clear: both;
@@ -57,7 +58,7 @@ margin: 0px;
 }
 .site-header .site-branding {
   position: relative;
-  min-height: 154px;
+  min-height: 120px;
 }
 .site-info {
 	background-color:#888;
@@ -89,10 +90,6 @@ margin: 0px;
   font-weight: 300;
   color: #878787;
 }
-
-.header-adplace {background-color:#fff; width: 728px; height:90px; margin: 20px auto;}
-.header-adplace img {display: block; margin-bottom: 10px;}
-.no-title {display: none;}
 
 .expound-custom-header,
 .expound-custom-header img {
@@ -148,7 +145,7 @@ margin: 0px;
 }
 .main-small-navigation ul > .current_page_item,
 .main-small-navigation ul > .current-menu-item {
-  background: #117bb8;
+  background: #167787;
 }
 .navigation-main {
   background: #167787;
@@ -562,8 +559,8 @@ h3 {
   padding-top: 40px;
   padding-bottom: 40px;
   margin: 0;
-  padding-left: 40px;
-  padding-right: 40px;
+  padding-left: 30px;
+  padding-right: 30px;
   border-bottom: solid 1px #dddddd;
 }
 .featured-content .entry-title {
@@ -582,7 +579,7 @@ h3 {
   float: left;
 }
 .featured-content .has-post-thumbnail .entry-thumbnail {
-  width: 50%;
+  width: 430px;
 }
 .featured-content .has-post-thumbnail .entry-thumbnail a {
   margin-right: 10px;
@@ -597,9 +594,12 @@ h3 {
 .featured-content .has-post-thumbnail .entry-header,
 .featured-content .has-post-thumbnail .entry-summary,
 .featured-content .has-post-thumbnail .entry-meta {
-  margin-left: 50%;
-  padding-left: 10px;
+  margin-left: 430px;
+  padding-left:15px;
+  width: 200px;
 }
+
+
 .featured-content .has-post-thumbnail .entry-summary:after {
   display: table;
   content: '';
@@ -922,11 +922,23 @@ a.wpm-button:hover {
   color: red;
 }
 @media (max-width: 1080px) {
+  #topbar-content { width: 940px; }
   #page {
     width: 960px;
   }
   #primary {
     width: 680px;
+  }
+  .featured-content .has-post-thumbnail .entry-thumbnail {
+    width: 50%;
+  }
+
+  .featured-content .has-post-thumbnail .entry-header,
+  .featured-content .has-post-thumbnail .entry-summary,
+  .featured-content .has-post-thumbnail .entry-meta {
+    margin-left: 50%px;
+    padding-left: 10px;
+    width: 50%;
   }
   .featured-content-secondary {
     padding-top: 20px;
@@ -956,36 +968,63 @@ a.wpm-button:hover {
   .single .site-content .related-content article {
     width: 200px;
   }
+  div#header-ad, div#featured-ad { 
+    display: none; 
+  }
 }
 @media (max-width: 1020px) {
+  #topbar-content { width: 880px; }
   #page {
     width: 900px;
   }
   #primary {
     width: 620px;
   }
+    .featured-content .has-post-thumbnail .entry-header,
+  .featured-content .has-post-thumbnail .entry-summary,
+  .featured-content .has-post-thumbnail .entry-meta {
+    margin-left: 50%px;
+    padding-left: 10px;
+    width: 50%;
+  }
   .single .site-content .related-content article {
     width: 180px;
   }
 }
 @media (max-width: 960px) {
+  #topbar-content { width: 820px; }
   #page {
     width: 840px;
   }
   #primary {
     width: 560px;
   }
+  .featured-content .has-post-thumbnail .entry-header,
+  .featured-content .has-post-thumbnail .entry-summary,
+  .featured-content .has-post-thumbnail .entry-meta {
+    margin-left: 40%px;
+    padding-left: 10px;
+    width: 40%;
+  }
   .single .site-content .related-content article {
     width: 160px;
   }
 }
 @media (max-width: 900px) {
+  #topbar-content { width: 85%; }
   #page {
     width: 87%;
   }
   #primary {
     width: 100%;
     margin-right: 0;
+  }
+  .featured-content .has-post-thumbnail .entry-header,
+  .featured-content .has-post-thumbnail .entry-summary,
+  .featured-content .has-post-thumbnail .entry-meta {
+    margin-left: 240px;
+    padding-left: 0px;
+    width: 60%;
   }
   #secondary {
     width: 100%;
@@ -1037,6 +1076,10 @@ a.wpm-button:hover {
     margin-left: 0;
     clear: both;
   }
+ .featured-content .has-post-thumbnail .entry-header,
+  .featured-content .has-post-thumbnail .entry-summary {
+    width: 100%;
+  }
   .single .site-content .entry-title,
   .site-content .entry-content h1,
   .site-content .comment-content h1 {
@@ -1062,7 +1105,42 @@ a.wpm-button:hover {
   }
 }
 @media (max-width: 600px) {
+  #topbar-content { width: 83%; }
   #page {
     width: 85%;
   }
+  div#topbar-right { 
+    display: none; 
+  }
+}
+.topbar {
+  position: fixed;
+  z-index: 10000;
+  top:0;
+  width: 100%;
+  background-color: #033;
+  padding: 7px 0;
+-webkit-box-shadow: 0 2px 6px rgba(0, 0, 0, .5);
+-moz-box-shadow: 0 2px 6px rgba(0, 0, 0, .5);
+ box-shadow: 0 2px 6px rgba(0, 0, 0, .5);
+}
+.topbar-left { float: left; width:300px; font-size:14px; font-family:Oswald, Arial, Sans-serif; color:#fff; }
+.topbar-left img { width:20px; height:20px; margin: -6px 2px 0 0; vertical-align:middle; }
+.topbar-language a { text-decoration:none; color:#DF212B; }
+.topbar-language a:hover { color:#DF212B; }
+.topbar-language a:visited { color:#DF212B; }
+.topbar-edition a { text-decoration:none; color:#ffffff; }
+.topbar-edition a:hover { color:#ffffff; }
+.topbar-edition a:visited { color:#ffffff; }
+.topbar-right { float:right; font-size:14px; font-family:Oswald, Arial, Sans-serif; color:#fff; }
+.topbar-right img { width:20px; height:20px; margin: -5px 2px 0; vertical-align:middle; }
+
+.header-adplace {background-color:#fff; width: 728px; height:90px; margin-top:15px; margin-left:280px;}
+.header-adplace img {display: block;}
+.no-title {display: none;}
+
+.featured-adplace {
+ margin-left:660px;
+ margin-top:-250px;
+ width:300px;
 }

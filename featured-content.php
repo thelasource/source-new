@@ -9,7 +9,6 @@
 			<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'expound-featured' ); ?></a>
 		</div>
 		<?php endif; ?>
-
 		<header class="entry-header">
 			<h1 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'expound' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
 		</header><!-- .entry-header -->
@@ -18,10 +17,17 @@
 			<?php the_excerpt(); ?>
 			<p><a class="button-primary" href="<?php the_permalink(); ?>"><?php _e( 'Continue reading &rarr;', 'expound' ); ?></a></p>
 		</div><!-- .entry-summary -->
+<!-- Featured Ad Place -->
+ <?php if ( is_active_sidebar( 'featured-widget-area' ) ) : ?>
+			<div id="featured-ad" class="featured-adplace">
+                        <?php if ( !dynamic_sidebar( 'featured-widget-area' ) )?>
+           </div>
+<?php endif; ?>
 
 	</article>
 
 </div><!-- .featured-content -->
+
 
 <?php if ( $featured_posts->have_posts() ) : // more than one? ?>
 <div class="featured-content-secondary">

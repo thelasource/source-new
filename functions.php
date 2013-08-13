@@ -85,7 +85,7 @@ function expound_setup() {
 	 * Enable support for Custom Background
 	 */
 	add_theme_support( 'custom-background', array(
-		'default-color' => '333333',
+		'default-color' => 'f2f2f2',
 	) );
 
 	/**
@@ -93,8 +93,8 @@ function expound_setup() {
 	 */
 	add_theme_support( 'custom-header', array(
 		'default-text-color'     => '3a3a3a',
-		'width'                  => 1020,
-        'height'                 => 154,
+		'width'                  => 274,
+        'height'                 => 120,
         'flex-height'            => true,
         'wp-head-callback'       => 'expound_header_style',
         'admin-head-callback'    => 'expound_admin_header_style',
@@ -183,6 +183,17 @@ function expound_widgets_init() {
 		'name' => __( 'Header Ad Place' ),
 		'id' => 'header-widget-area',
 		'description' => __( 'An ad place, max width 728px' ),
+		'before_widget' => '',
+		'after_widget' => '',
+		'before_title' => '<span class="no-title">',
+		'after_title' => '</span>',
+	) );
+
+// Featured widget area, use for ad.
+	register_sidebar( array(
+		'name' => __( 'Featured Ad Place' ),
+		'id' => 'featured-widget-area',
+		'description' => __( 'An ad place, width 300px and height 250px' ),
 		'before_widget' => '',
 		'after_widget' => '',
 		'before_title' => '<span class="no-title">',
