@@ -1127,7 +1127,7 @@ a.wpm-button:hover {
 -moz-box-shadow: 0 2px 6px rgba(0, 0, 0, .5);
  box-shadow: 0 2px 6px rgba(0, 0, 0, .5);
 }
-.topbar-left { float: left; width:300px; font-size:14px; font-family:Oswald, Arial, Sans-serif; color:#fff; }
+.topbar-left { float: left; width:50%; font-size:14px; font-family:Oswald, Arial, Sans-serif; color:#fff; }
 .topbar-left img { width:20px; height:20px; margin: -6px 2px 0 0; vertical-align:middle; }
 .topbar-language a { text-decoration:none; color:#DF212B; }
 .topbar-language a:hover { color:#DF212B; }
