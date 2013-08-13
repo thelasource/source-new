@@ -35,28 +35,35 @@ $edition_name = ( is_object($volume) ? $volume->name.", ".$edition->name." - ".$
 </head>
 
 <body <?php body_class(); ?>>
-<div>
-	<a href="<?php echo esc_url( home_url( '/' ) ); ?>"> English </a> 
-	<a class="expand-archive"> Click for Archive </a>
-	<form method="post" class='archive'>
-    	
-    	<?php 
-    	$args = array(
-			'taxonomy'           => 'edition',
-			'hierarchical'       => true,    	
-    	);
-    	wp_dropdown_categories( $args ); 
-    	?>
-    	
-	</form>
+<!--Top Bar -->
+<div id="top-bar" class="topbar">
+	<div id="topbar-content">
+	<div id="topbar-left" class="topbar-left">
+	<img src="/wp-content/uploads/2013/08/source_icon_white.png"/>
+	<span class="topbar-language"><a href="<?php echo esc_url( home_url( '/' ) ); ?>">ENGLISH</a></span> &middot; <span class="topbar-edition"><a class='expand-archive'><?php echo $edition_name; ?></a></span>
+<form method="post" class='archive'>
+            	Volume: 
+            	<select name="volume">
+	                <option value="2012">2012</option>
+	                <option value="2011">2011</option>
+            	</select>
+            	Issue:  
+	            <select name="issue">
+	                <option value="July">July</option>
+	                <option value="June">June</option>
+	                <option value="May">May</option>
+	            </select>
+            <input id='archive_submit' type="submit" value="Get issue">
+        	</form>
 </div>
-		
-<!-- Ad Place before Header -->
- <?php if ( is_active_sidebar( 'header-widget-area' ) ) : ?>
-			<div class="header-adplace">
-                        <?php if ( !dynamic_sidebar( 'header-widget-area' ) )?>
-           </div>
-<?php endif; ?>
+	<div id="topbar-right" class="topbar-right">retrouvez-nous:
+		<a href="http://www.facebook.com/thelasource" target="_blank"><img src="http://localhost/wp-content/uploads/2013/08/f.png"/></a>
+		<a href="http://twitter.com/thelasource" target="_blank"><img src="http://localhost/wp-content/uploads/2013/08/t.png"/></a>
+		<a href="http://plus.google.com/" target="_blank"><img src="http://localhost/wp-content/uploads/2013/08/g.png"/></a>
+		<a href="/feed/rss2/" target="_blank"><img src="http://localhost/wp-content/uploads/2013/08/rss.png"/></a>
+	</div>
+	</div>
+</div>
 <div id="page" class="hfeed site">
 	<?php do_action( 'before' ); ?>
 	<header id="masthead" class="site-header" role="banner">
@@ -72,9 +79,15 @@ $edition_name = ( is_object($volume) ? $volume->name.", ".$edition->name." - ".$
 					<img src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="" />
 				</a>
 			<?php endif; ?>
+            <!-- Header Ad Place -->
+ <?php if ( is_active_sidebar( 'header-widget-area' ) ) : ?>
+			<div id="header-ad" class="header-adplace">
+                        <?php if ( !dynamic_sidebar( 'header-widget-area' ) )?>
+           </div>
+<?php endif; ?>
 		</div>
 		
-		
+
 		<nav id="site-navigation" class="navigation-main" role="navigation">
 			<h1 class="menu-toggle"><?php _e( 'Menu', 'expound' ); ?></h1>
 			<div class="screen-reader-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'expound' ); ?>"><?php _e( 'Skip to content', 'expound' ); ?></a></div>
@@ -83,5 +96,4 @@ $edition_name = ( is_object($volume) ? $volume->name.", ".$edition->name." - ".$
 			<?php do_action( 'expound_navigation_after' ); ?>
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
-
 	<div id="main" class="site-main">
