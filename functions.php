@@ -323,6 +323,22 @@ function expound_get_featured_posts() {
 	return new WP_Query( $args );
 }
 
+
+/**
+ * Returns a new WP_Query with featured posts.
+ */
+function new_source_get_featured_posts() {
+	global $wp_query;
+
+
+	$args = array(
+		'posts_per_page' => 5,
+		'post__in' => $sticky,
+		'ignore_sticky_posts' => true,
+	);
+
+	return new WP_Query( $args );
+}
 /**
  * Returns a new WP_Query with related posts.
  */
