@@ -1113,6 +1113,9 @@ a.wpm-button:hover {
     display: none; 
   }
 }
+.admin-bar .topbar{
+	top:25px;
+}
 .topbar {
   position: fixed;
   z-index: 10000;
