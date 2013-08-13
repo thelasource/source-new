@@ -35,6 +35,22 @@ $edition_name = ( is_object($volume) ? $volume->name.", ".$edition->name." - ".$
 </head>
 
 <body <?php body_class(); ?>>
+<div>
+	<a href="<?php echo esc_url( home_url( '/' ) ); ?>"> English </a> 
+	<a class="expand-archive"> Click for Archive </a>
+	<form method="post" class='archive'>
+    	
+    	<?php 
+    	$args = array(
+			'taxonomy'           => 'edition',
+			'hierarchical'       => true,    	
+    	);
+    	wp_dropdown_categories( $args ); 
+    	?>
+    	
+	</form>
+</div>
+		
 <!-- Ad Place before Header -->
  <?php if ( is_active_sidebar( 'header-widget-area' ) ) : ?>
 			<div class="header-adplace">
@@ -57,25 +73,8 @@ $edition_name = ( is_object($volume) ? $volume->name.", ".$edition->name." - ".$
 				</a>
 			<?php endif; ?>
 		</div>
-		<div>
-			<a href="<?php echo esc_url( home_url( '/' ) ); ?>"> English </a> 
-        	<a class='expand-archive'> Click for Archive</a>
-        	<form method="post" class='archive'>
-            	Volume: 
-            	<select name="volume">
-	                <option value="2012">2012</option>
-	                <option value="2011">2011</option>
-            	</select>
-            	Issue:  
-	            <select name="issue">
-	                <option value="July">July</option>
-	                <option value="June">June</option>
-	                <option value="May">May</option>
-	            </select>
-            <input id='archive_submit' type="submit" value="Get issue">
-        	</form>
-		</div>
-
+		
+		
 		<nav id="site-navigation" class="navigation-main" role="navigation">
 			<h1 class="menu-toggle"><?php _e( 'Menu', 'expound' ); ?></h1>
 			<div class="screen-reader-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'expound' ); ?>"><?php _e( 'Skip to content', 'expound' ); ?></a></div>
