@@ -42,18 +42,45 @@ $edition_name = ( is_object($volume) ? $volume->name.", ".$edition->name." - ".$
 	<img src="/wp-content/uploads/2013/08/source_icon_white.png"/>
 	<span class="topbar-language"><a href="<?php echo esc_url( home_url( '/' ) ); ?>">ENGLISH</a></span> &middot; <span class="topbar-edition"><a class='expand-archive'><?php echo $edition_name; ?></a></span>
 <form method="post" class='archive'>
-            	Volume: 
-            	<select name="volume">
-	                <option value="2012">2012</option>
-	                <option value="2011">2011</option>
-            	</select>
-            	Issue:  
-	            <select name="issue">
-	                <option value="July">July</option>
-	                <option value="June">June</option>
-	                <option value="May">May</option>
-	            </select>
-            <input id='archive_submit' type="submit" value="Get issue">
+            	Select an issue: 
+            	<?php
+            	
+            	class Walker_SlugValueCategoryDropdown extends Walker_CategoryDropdown {
+            		function start_el( &$output, $category, $depth = 0, $args = array(), $id = 0 ) {
+						$pad = str_repeat('&nbsp;', $depth * 3);
+
+						$cat_name = apply_filters('list_cats', $category->name, $category);
+						$output .= "\t<option class=\"level-$depth\" value=\"".$category->slug."\"";
+					
+						if ( $category->term_id == $args['selected'] )
+							$output .= ' selected="selected"';
+					
+						$output .= '>';
+						$output .= $pad.$cat_name;
+						if ( $args['show_count'] )
+							$output .= '&nbsp;&nbsp;('. $category->count .')';
+						$output .= "</option>\n";
+					}
+				}
+
+
+            	$volume_args = array(
+            		'name'=>'ed',
+            		'taxonomy'=>'edition',
+            		'hierarchical'=>true,
+            		'walker'=>new Walker_SlugValueCategoryDropdown);
+
+            	wp_dropdown_categories($volume_args);
+            	?>
+            	<script type="text/javascript"><!--
+    				var dropdown = document.getElementById("ed");
+    				function onEditionChange() {
+						if ( dropdown.options[dropdown.selectedIndex].value) {
+							location.href =  "<?php echo get_option('home');?>/?edition="+dropdown.options[dropdown.selectedIndex].value;
+						}
+    				}
+    				dropdown.onchange = onEditionChange;
+			--></script>
         	</form>
 </div>
 	<div id="topbar-right" class="topbar-right">retrouvez-nous:
