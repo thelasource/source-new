@@ -13,14 +13,23 @@
 
 global $edition, $edition_link;
 
-$edition = get_term_by( 'id', get_theme_mod('home_edition'),'edition');
-$volume  = get_term_by( 'id', $edition->parent, 'edition');
+if( is_tax( 'edition' ) ):
+	// $term_idz = get_queried_object_id();
+else:
+	$term_idz = get_theme_mod('home_edition');
+endif;
 
-$edition_link = get_term_link( $edition );
-$edition_name = ( is_object($volume) ? $volume->name.", ".$edition->name." - ".$edition->description : $edition->name." - ".$edition->description ); 
+	$edition = get_term_by( 'id', $term_idz, 'edition' );
+	$volume  = get_term_by( 'id', $edition->parent, 'edition' );
+	$edition_link = get_term_link( $edition );
+	$edition_name = ( is_object($volume) ? $volume->name.", ".$edition->name." - ".$edition->description : $edition->name." - ".$edition->description ); 
+
+
+
 // $edition->name
 // $edition->description
-// $edition->slug		
+// $edition->slug
+// $edition->term_id		
 		?>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
