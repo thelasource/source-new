@@ -49,6 +49,7 @@ html {
 }
 body {
 	background: #fff;
+	display: block!important; /* todo list */
 }
 article,
 aside,
