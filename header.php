@@ -48,8 +48,8 @@ endif;
 <div id="top-bar" class="topbar">
 	<div id="topbar-content">
 	<div id="topbar-left" class="topbar-left">
-	<img src="/wp-content/uploads/2013/08/source_icon_white.png"/>
-	<span class="topbar-language"><a href="<?php echo esc_url( home_url( '/' ) ); ?>">ENGLISH</a></span> &middot; <span class="topbar-edition"><a class='expand-archive'><?php echo $edition_name; ?></a></span>
+		<img src="/wp-content/uploads/2013/08/source_icon_white.png"/>
+		<span class="topbar-language"><a href="<?php echo esc_url( home_url( '/' ) ); ?>">ENGLISH</a></span> &middot; <span class="topbar-edition"><a class='expand-archive'><?php echo $edition_name; ?></a></span>
 <form method="post" class='archive'>
             	Select an issue: 
             	<?php
@@ -72,12 +72,13 @@ endif;
 			--></script>
         	</form>
 </div>
-	<div id="topbar-right" class="topbar-right">retrouvez-nous:
-		<a href="http://www.facebook.com/thelasource" target="_blank"><img src="http://localhost/wp-content/uploads/2013/08/f.png"/></a>
-		<a href="http://twitter.com/thelasource" target="_blank"><img src="http://localhost/wp-content/uploads/2013/08/t.png"/></a>
-		<a href="http://plus.google.com/" target="_blank"><img src="http://localhost/wp-content/uploads/2013/08/g.png"/></a>
-		<a href="/feed/rss2/" target="_blank"><img src="http://localhost/wp-content/uploads/2013/08/rss.png"/></a>
-	</div>
+		
+		<div id="topbar-right" class="topbar-right">retrouvez-nous:
+			<a href="http://www.facebook.com/thelasource" target="_blank"><i class="icon-facebook-rect"></i></a> 
+			<a href="http://twitter.com/thelasource" target="_blank"><i class="icon-twitter-rect"></i></a>
+			<a href="mailto:info@thelasource.com" target="_blank"><i class="icon-mail-alt"></i>
+			<a href="/feed/rss2/" target="_blank"><i class="icon-rss"></i></a>
+		</div>
 	</div>
 </div>
 <div id="page" class="hfeed site">

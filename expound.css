@@ -1137,7 +1137,7 @@ a.wpm-button:hover {
 .topbar-edition a { text-decoration:none; color:#ffffff; }
 .topbar-edition a:hover { color:#ffffff; }
 .topbar-edition a:visited { color:#ffffff; }
-.topbar-right { float:right; font-size:14px; font-family:Oswald, Arial, Sans-serif; color:#fff; }
+.topbar-right { float:right; font-size:14px; font-family:Oswald, Arial, Sans-serif; color:#fff; text-align: right; width: 50%; }
 .topbar-right a { color:#fff; font-size:20px; text-decoration:none; margin-right:-6px; }
 
 .header-adplace {background-color:#fff; width: 728px; height:90px; margin-top:15px; margin-left:280px;}
