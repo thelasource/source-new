@@ -339,15 +339,24 @@ function expound_get_featured_posts() {
  * Returns a new WP_Query with featured posts.
  */
 function new_source_get_featured_posts() {
-	global $wp_query;
-
-
+	global $wp_query, $edition; 
+	
 	$args = array(
-		'posts_per_page' => 5,
-		'post__in' => $sticky,
-		'ignore_sticky_posts' => true,
+		'posts_per_page' => -1,
+		'tax_query' => array(
+		array(
+			'taxonomy' => 'edition',
+			'field' => 'id',
+			'terms' => $edition->term_id
+		),
+		array(
+			'taxonomy' => 'category',
+			'field' => 'slug',
+			'terms' => array( 'cover-story', 'columns' )
+			)
+		)
 	);
-
+		
 	return new WP_Query( $args );
 }
 /**

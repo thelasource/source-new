@@ -1,4 +1,4 @@
-<?php $featured_posts = expound_get_featured_posts(); ?>
+<?php $featured_posts = new_source_get_featured_posts(); ?>
 <?php if ( $featured_posts->have_posts() ) : $featured_posts->the_post(); ?>
 <div class="featured-content">
 
