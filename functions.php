@@ -42,6 +42,11 @@ function expound_setup() {
 	require( get_template_directory() . '/inc/customizer.php' );
 
 	/**
+	 * Customizer additions
+	 */
+	require( get_template_directory() . '/inc/class.new_source_Walker_CategoryDropdown.php' );
+
+	/**
 	 * Make theme available for translation
 	 * Translations can be filed in the /languages/ directory
 	 * If you're building a theme based on Mag, use a find and replace
