@@ -37,11 +37,17 @@
 </div><!-- .featured-content -->
 
 
-<?php if ( $featured_posts->have_posts() ) : // more than one? ?>
-<div class="featured-content-secondary">
-	<?php while ( $featured_posts->have_posts() ) : $featured_posts->the_post(); ?>
+<?php
 
-		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+$total_posts = $featured_posts->post_count - 1;
+if ( $featured_posts->have_posts() ) : // more than one? ?>
+<div class="featured-content-secondary">
+	<?php
+	$count = 1;
+	
+	 while ( $featured_posts->have_posts() ) : $featured_posts->the_post(); ?>
+	
+		<article id="post-<?php the_ID(); ?>" <?php post_class( "post-count-".$total_posts ); ?>>
 
 			<?php if ( has_post_thumbnail() ) : ?>
 			<div class="entry-thumbnail">
@@ -62,7 +68,9 @@
 			</div><!-- .entry-summary -->
 		</article>
 
-	<?php endwhile; ?>
+	<?php 
+	$count; 
+	endwhile; ?>
 </div><!-- .featured-content-secondary -->
 <?php endif; // have_posts() inner ?>
 

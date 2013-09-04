@@ -309,6 +309,18 @@ function expound_pre_get_posts( $query ) {
 }
 add_action( 'pre_get_posts', 'expound_pre_get_posts' );
 
+add_filter( 'get_the_categories' , 'new_source_remove_selected');
+
+function new_source_remove_selected($categories){
+	
+	$exclude_categories = array('selected', 'selection');
+	foreach($categories as $cat ):
+		if(!in_array( $cat->slug, $exclude_categories ) )
+			$return_categories[] = $cat;
+	endforeach;
+	
+	return $return_categories;
+}
 /**
  * Returns a new WP_Query with featured posts.
  */
@@ -357,7 +369,7 @@ function new_source_get_featured_posts() {
 		array(
 			'taxonomy' => 'category',
 			'field' => 'slug',
-			'terms' => array( 'cover-story', 'columns', 'a-la-une', 'chronique' )
+			'terms' => array( 'cover-story', 'selected', 'a-la-une', 'selection' )
 			)
 		)
 	);

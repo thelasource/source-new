@@ -621,6 +621,12 @@ h3 {
   width: 220px;
   float: left;
 }
+.featured-content-secondary .post-count-5{
+	width: 172px;
+}
+.post-count-5 .entry-thumbnail-category{
+	top:65px;
+}
 .featured-content-secondary .entry-thumbnail {
   margin-bottom: 20px;
 }
