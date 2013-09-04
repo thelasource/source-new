@@ -357,7 +357,7 @@ function new_source_get_featured_posts() {
 		array(
 			'taxonomy' => 'category',
 			'field' => 'slug',
-			'terms' => array( 'cover-story', 'columns' )
+			'terms' => array( 'cover-story', 'columns', 'a-la-une', 'chronique' )
 			)
 		)
 	);
