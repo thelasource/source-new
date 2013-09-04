@@ -9,6 +9,8 @@
 			<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'expound-featured' ); ?></a>
 		</div>
 		<?php endif; ?>
+
+<?php if ( is_active_sidebar( 'featured-widget-area' ) ) { ?><!-- If there is a featured content ad -->
 		<header class="entry-header">
 			<h1 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'expound' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
 		</header><!-- .entry-header -->
@@ -17,13 +19,19 @@
 			<?php the_excerpt(); ?>
 			<p><a class="button-primary" href="<?php the_permalink(); ?>"><?php _e( 'Continue reading &rarr;', 'expound' ); ?></a></p>
 		</div><!-- .entry-summary -->
-<!-- Featured Ad Place -->
- <?php if ( is_active_sidebar( 'featured-widget-area' ) ) : ?>
 			<div id="featured-ad" class="featured-adplace">
                         <?php if ( !dynamic_sidebar( 'featured-widget-area' ) )?>
-           </div>
-<?php endif; ?>
+           </div><!-- featured ad place -->
+<?php } else { ?><!-- If there is no featured content ad -->
+<header class="entry-header no-featured-ad">
+			<h1 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'expound' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
+		</header><!-- .entry-header -->
 
+		<div class="entry-summary no-featured-ad">
+			<?php the_excerpt(); ?>
+			<p><a class="button-primary" href="<?php the_permalink(); ?>"><?php _e( 'Continue reading &rarr;', 'expound' ); ?></a></p>
+		</div><!-- .entry-summary -->
+<?php }; ?>
 	</article>
 
 </div><!-- .featured-content -->

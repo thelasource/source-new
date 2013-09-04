@@ -1,3 +1,4 @@
+@import url("icons-thelasource.css");
 body {
   background: #333;
   /*background: #999;*/
@@ -598,8 +599,9 @@ h3 {
   padding-left:15px;
   width: 200px;
 }
-
-
+.featured-content .has-post-thumbnail .no-featured-ad {
+  width: 500px;
+}
 .featured-content .has-post-thumbnail .entry-summary:after {
   display: table;
   content: '';
@@ -1136,7 +1138,7 @@ a.wpm-button:hover {
 .topbar-edition a:hover { color:#ffffff; }
 .topbar-edition a:visited { color:#ffffff; }
 .topbar-right { float:right; font-size:14px; font-family:Oswald, Arial, Sans-serif; color:#fff; }
-.topbar-right img { width:20px; height:20px; margin: -5px 2px 0; vertical-align:middle; }
+.topbar-right a { color:#fff; font-size:20px; text-decoration:none; margin-right:-6px; }
 
 .header-adplace {background-color:#fff; width: 728px; height:90px; margin-top:15px; margin-left:280px;}
 .header-adplace img {display: block;}
