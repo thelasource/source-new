@@ -57,10 +57,10 @@ $edition_name = ( is_object($volume) ? $volume->name.", ".$edition->name." - ".$
         	</form>
 </div>
 	<div id="topbar-right" class="topbar-right">retrouvez-nous:
-		<a href="http://www.facebook.com/thelasource" target="_blank"><img src="http://localhost/wp-content/uploads/2013/08/f.png"/></a>
-		<a href="http://twitter.com/thelasource" target="_blank"><img src="http://localhost/wp-content/uploads/2013/08/t.png"/></a>
-		<a href="http://plus.google.com/" target="_blank"><img src="http://localhost/wp-content/uploads/2013/08/g.png"/></a>
-		<a href="/feed/rss2/" target="_blank"><img src="http://localhost/wp-content/uploads/2013/08/rss.png"/></a>
+		<a href="http://www.facebook.com/thelasource" target="_blank"><i class="icon-facebook-rect"></i></a> 
+		<a href="http://twitter.com/thelasource" target="_blank"><i class="icon-twitter-rect"></i></a>
+		<a href="mailto:info@thelasource.com" target="_blank"><i class="icon-mail-alt"></i>
+		<a href="/feed/rss2/" target="_blank"><i class="icon-rss"></i></a>
 	</div>
 	</div>
 </div>
@@ -96,4 +96,3 @@ $edition_name = ( is_object($volume) ? $volume->name.", ".$edition->name." - ".$
 			<?php do_action( 'expound_navigation_after' ); ?>
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
-	<div id="main" class="site-main">
