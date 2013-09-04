@@ -563,6 +563,7 @@ h3 {
   padding-left: 30px;
   padding-right: 30px;
   border-bottom: solid 1px #dddddd;
+  position: relative;
 }
 .featured-content .entry-title {
   font-size: 20px;
@@ -1145,7 +1146,9 @@ a.wpm-button:hover {
 .no-title {display: none;}
 
 .featured-adplace {
- margin-left:660px;
- margin-top:-250px;
- width:300px;
+	position: absolute;
+	top:0;
+	right:20px;
+	width: 300px;
+	height: auto;
 }
