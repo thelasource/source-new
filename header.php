@@ -76,7 +76,7 @@ endif;
 		<div id="topbar-right" class="topbar-right">retrouvez-nous:
 			<a href="http://www.facebook.com/thelasource" target="_blank"><i class="icon-facebook-rect"></i></a> 
 			<a href="http://twitter.com/thelasource" target="_blank"><i class="icon-twitter-rect"></i></a>
-			<a href="mailto:info@thelasource.com" target="_blank"><i class="icon-mail-alt"></i>
+			<a href="mailto:info@thelasource.com" target="_blank"><i class="icon-mail-alt"></i></a>
 			<a href="/feed/rss2/" target="_blank"><i class="icon-rss"></i></a>
 		</div>
 	</div>

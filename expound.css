@@ -1147,7 +1147,7 @@ a.wpm-button:hover {
 
 .featured-adplace {
 	position: absolute;
-	top:0;
+	top:40px;
 	right:20px;
 	width: 300px;
 	height: auto;
