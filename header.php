@@ -11,18 +11,8 @@
 <head>
 <?php 
 
-global $edition, $edition_link;
-
 $term_id = new_source_get_edition_id();
-
-$edition = get_term_by( 'id', $term_id, 'edition' );
-$volume  = get_term_by( 'id', $edition->parent, 'edition' );
-$edition_link = get_term_link( $edition );
-
-$edition_name = ( is_object($volume) ?
-			 $volume->name.", ".$edition->name." - ".$edition->description : 
-			 $edition->name." - ".$edition->description ); 
-
+$edition_name = new_source_get_edition_name();
 
 
 // $edition->name
@@ -38,7 +28,7 @@ $edition_name = ( is_object($volume) ?
 <!--[if lt IE 9]>
 <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
 <![endif]-->
-<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+<link href="http://fonts.googleapis.com/css?family=Oswald" rel="stylesheet" type="text/css">
 <?php wp_head(); ?>
 </head>
 

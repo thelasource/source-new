@@ -265,15 +265,14 @@ add_action( 'widgets_init', 'expound_widgets_init' );
 function expound_scripts() {
 	wp_enqueue_style( 'expound-style', get_stylesheet_uri(), array(), 2 );
 	wp_enqueue_style( 'expound-less', get_template_directory_uri() . '/expound.css', array( 'expound-style' ), 3 );
+	
+	wp_enqueue_script( 'new-source-combine', get_template_directory_uri() . '/js/combine.js', array(), '20120206', true );
 
-	wp_enqueue_script( 'expound-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
+	// wp_enqueue_script( 'expound-navigation', get_template_directory_uri() . '/js/combine.js', array(), '20120206', true );
 
-	wp_enqueue_script( 'expound-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
+	// wp_enqueue_script( 'expound-skip-link-focus-fix', get_template_directory_uri() . '/js/combine.js', array(), '20130115', true );
 
-	wp_enqueue_script(
-    'expand-archive',
-    get_template_directory_uri() . '/js/archive.js',
-    array('jquery'));
+	// wp_enqueue_script( 'expand-archive', get_template_directory_uri() . '/js/combine.js', array('jquery'));
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -410,7 +409,6 @@ function expound_get_featured_posts() {
  * Returns a new WP_Query with featured posts.
  */
 function new_source_get_featured_posts() {
-	global $wp_query, $edition; 
 	
 	$edition = new_source_get_edition_id();
 	
@@ -444,12 +442,28 @@ function new_source_get_edition_id(){
 		return get_theme_mod( 'home_edition' );
 	elseif(  is_tax( 'edition' ) ) :
 		return get_queried_object_id();
+	elseif( is_page()):
+		return get_theme_mod( 'home_edition' );
 	elseif( is_single() ):
 		global $post;
 		$terms =  get_the_terms( $post->ID, 'edition' );
 		$ids = array_keys( $terms );
 		return $ids[0];
 	endif;
+}
+
+function new_source_get_edition_name(){
+
+
+	$term_id = new_source_get_edition_id();
+	
+	$edition = get_term_by( 'id', $term_id, 'edition' );
+	
+	$volume  = get_term_by( 'id', $edition->parent, 'edition' );
+	$edition_link = get_term_link( $edition );
+
+	return ( is_object($volume) ? $volume->name.", ".$edition->name." - ".$edition->description : $edition->name." - ".$edition->description );
+
 }
 /**
  * Returns a new WP_Query with related posts.
