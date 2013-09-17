@@ -98,7 +98,7 @@ margin: 0px;
   float: left;
 }
 .site-header .menu-toggle {
-  background: #3a3a3a;
+  background: #167787;
   color: white;
   font: 13px/20px "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 300;
@@ -1061,6 +1061,7 @@ a.wpm-button:hover {
   }
 }
 @media (max-width: 700px) {
+  #topbar-content { width: 87%; }
   .featured-content .has-post-thumbnail .entry-thumbnail,
   .featured-content-secondary .has-post-thumbnail .entry-thumbnail,
   .has-post-thumbnail .entry-thumbnail {
@@ -1114,9 +1115,11 @@ a.wpm-button:hover {
   }
 }
 @media (max-width: 600px) {
-  #topbar-content { width: 83%; }
+  #topbar-content { width: 100%; }
+  #topbar-left { width: 100%; }
+  #topbar-right { width: 0%; }
   #page {
-    width: 85%;
+    width: 100%;
   }
   div#topbar-right { 
     display: none; 
