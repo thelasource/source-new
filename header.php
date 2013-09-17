@@ -13,16 +13,15 @@
 
 global $edition, $edition_link;
 
-if( is_tax( 'edition' ) ):
-	// $term_idz = get_queried_object_id();
-else:
-	$term_idz = get_theme_mod('home_edition');
-endif;
+$term_id = new_source_get_edition_id();
 
-	$edition = get_term_by( 'id', $term_idz, 'edition' );
-	$volume  = get_term_by( 'id', $edition->parent, 'edition' );
-	$edition_link = get_term_link( $edition );
-	$edition_name = ( is_object($volume) ? $volume->name.", ".$edition->name." - ".$edition->description : $edition->name." - ".$edition->description ); 
+$edition = get_term_by( 'id', $term_id, 'edition' );
+$volume  = get_term_by( 'id', $edition->parent, 'edition' );
+$edition_link = get_term_link( $edition );
+
+$edition_name = ( is_object($volume) ?
+			 $volume->name.", ".$edition->name." - ".$edition->description : 
+			 $edition->name." - ".$edition->description ); 
 
 
 
@@ -77,7 +76,7 @@ endif;
 			<a href="http://www.facebook.com/thelasource" target="_blank"><i class="icon-facebook-rect"></i></a> 
 			<a href="http://twitter.com/thelasource" target="_blank"><i class="icon-twitter-rect"></i></a>
 			<a href="mailto:info@thelasource.com" target="_blank"><i class="icon-mail-alt"></i></a>
-			<a href="/feed/rss2/" target="_blank"><i class="icon-rss"></i></a>
+			<a href="<?php bloginfo('rss_url'); ?> " target="_blank"><i class="icon-rss"></i></a>
 		</div>
 	</div>
 </div>

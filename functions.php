@@ -30,7 +30,10 @@ function expound_setup() {
 	 * Custom template tags for this theme.
 	 */
 	require( get_template_directory() . '/inc/template-tags.php' );
-
+	/**
+	 * Custom template tags for this theme.
+	 */
+	require( get_template_directory() . '/inc/widgets.php' );
 	/**
 	 * Custom functions that act independently of the theme templates
 	 */
@@ -307,11 +310,55 @@ function expound_pre_get_posts( $query ) {
 		$query->set( 'post__not_in', $exclude_ids );
 	}
 }
-add_action( 'pre_get_posts', 'expound_pre_get_posts' );
 
-add_filter( 'get_the_categories' , 'new_source_remove_selected');
+/**
+ * new_source_pre_get_posts function.
+ * 
+ * @access public
+ * @param mixed $query
+ * @return void
+ */
+function new_source_pre_get_posts( $query ){
+	if ( ! $query->is_main_query() || is_admin() )
+		return;
+	
+	if ( $query->is_home() || $query->is_tax('edition') ){
+		
+		$exclude_ids = array();
+		$featured_posts = new_source_get_featured_posts();
 
-function new_source_remove_selected($categories){
+		if ( $featured_posts->have_posts() )
+			foreach ( $featured_posts->posts as $post )
+				$exclude_ids[] = $post->ID;
+		
+		$query->set( 'post__not_in', $exclude_ids );
+		
+		if ( $query->is_home() ):
+		
+			$query->set( 'tax_query', array( array(
+					'taxonomy' => 'edition',
+					'field' => 'id',
+					'terms' => get_theme_mod('home_edition')
+				))
+		 	);
+		endif;
+	
+		
+	
+	}
+}
+
+add_action( 'pre_get_posts', 'new_source_pre_get_posts' );
+
+
+/**
+ * new_source_remove_selected function.
+ * 
+ * @access public
+ * @param mixed $categories
+ * @return void
+ */
+function new_source_remove_selected( $categories ) {
 	
 	$exclude_categories = array('selected', 'selection');
 	foreach($categories as $cat ):
@@ -321,6 +368,8 @@ function new_source_remove_selected($categories){
 	
 	return $return_categories;
 }
+add_filter( 'get_the_categories' , 'new_source_remove_selected');
+
 /**
  * Returns a new WP_Query with featured posts.
  */
@@ -358,13 +407,15 @@ function expound_get_featured_posts() {
 function new_source_get_featured_posts() {
 	global $wp_query, $edition; 
 	
+	$edition = new_source_get_edition_id();
+	
 	$args = array(
 		'posts_per_page' => -1,
 		'tax_query' => array(
 		array(
 			'taxonomy' => 'edition',
 			'field' => 'id',
-			'terms' => $edition->term_id
+			'terms' => new_source_get_edition_id()
 		),
 		array(
 			'taxonomy' => 'category',
@@ -375,6 +426,25 @@ function new_source_get_featured_posts() {
 	);
 		
 	return new WP_Query( $args );
+}
+
+/**
+ * new_source_get_edition_id function.
+ * 
+ * @access public
+ * @return void
+ */
+function new_source_get_edition_id(){
+	if( is_home() ):
+		return get_theme_mod( 'home_edition' );
+	elseif(  is_tax( 'edition' ) ) :
+		return get_queried_object_id();
+	elseif( is_single() ):
+		global $post;
+		$terms =  get_the_terms( $post->ID, 'edition' );
+		$ids = array_keys( $terms );
+		return $ids[0];
+	endif;
 }
 /**
  * Returns a new WP_Query with related posts.

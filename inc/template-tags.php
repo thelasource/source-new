@@ -197,3 +197,7 @@ function expound_category_transient_flusher() {
 }
 add_action( 'edit_category', 'expound_category_transient_flusher' );
 add_action( 'save_post', 'expound_category_transient_flusher' );
+
+function new_source_get_image(){
+	// genesis_get_image(
+}

@@ -68,14 +68,14 @@ get_header(); ?>
 	<?php endif; ?>
 
 	<?php
-		if ( is_home() && ! is_paged() || is_tax('edition')) // condition should be same as in pre_get_posts
+		if ( is_home() && ! is_paged() || is_tax('edition') ) // condition should be same as in pre_get_posts
 			get_template_part( 'featured-content' );
 	?>
 
 	<div id="primary" class="content-area">
 		<div id="content" class="site-content" role="main">
-
-		<?php if ( have_posts() ) : ?>
+		<?php
+		 if ( have_posts() ) : ?>
 
 			<?php /* Start the Loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
@@ -97,7 +97,6 @@ get_header(); ?>
 			<?php get_template_part( 'no-results', 'index' ); ?>
 
 		<?php else : ?>
-
 			<?php
 				$featured_posts = expound_get_featured_posts();
 				if ( ! $featured_posts->have_posts() )
