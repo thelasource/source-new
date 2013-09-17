@@ -87,6 +87,9 @@ $edition_name = new_source_get_edition_name();
 
 			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'depth' => 3 ) ); ?>
 			<?php do_action( 'expound_navigation_after' ); ?>
+			<div id="search" class="menu_search">
+				<?php get_search_form(); ?>
+			</div><!-- #search-form -->
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 	<div id="main" class="site-main">
