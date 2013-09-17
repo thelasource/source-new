@@ -45,9 +45,14 @@ function expound_setup() {
 	require( get_template_directory() . '/inc/customizer.php' );
 
 	/**
-	 * Customizer additions
+	 * Customized dropdown menu
 	 */
 	require( get_template_directory() . '/inc/class.new_source_Walker_CategoryDropdown.php' );
+
+	/**
+	 * Customized shortcodes for shortlinks
+	 */
+	require( get_template_directory() . '/inc/shortcodes.php' );
 
 	/**
 	 * Make theme available for translation
