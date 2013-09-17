@@ -297,7 +297,7 @@ class Feature_Post extends WP_Widget {
 					<select id="<?php echo $this->get_field_id( 'image_size' ); ?>" class="genesis-image-size-selector" name="<?php echo $this->get_field_name( 'image_size' ); ?>">
 						<option value="thumbnail">thumbnail (<?php echo get_option( 'thumbnail_size_w' ); ?>x<?php echo get_option( 'thumbnail_size_h' ); ?>)</option>
 						<?php
-						$sizes = genesis_get_additional_image_sizes();
+						$sizes = source_new_get_additional_image_sizes();
 						foreach( (array) $sizes as $name => $size )
 							echo '<option value="'.esc_attr( $name ).'" '.selected( $name, $instance['image_size'], FALSE ).'>'.esc_html( $name ).' ( '.$size['width'].'x'.$size['height'].' )</option>';
 						?>
@@ -396,3 +396,7 @@ function new_source_register_widgets() {
 }
 
 add_action( 'widgets_init', 'new_source_register_widgets' );
+
+function source_new_get_additional_image_sizes(){
+	return array();
+}
