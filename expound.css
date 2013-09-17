@@ -97,6 +97,17 @@ margin: 0px;
   display: block;
   float: left;
 }
+
+.menu_search {
+  float: right;
+  margin: 6px 6px 0 0;
+  font-size: 11px;
+}
+
+.navigation-main .submit {
+  display: none;
+}
+
 .site-header .menu-toggle {
   background: #167787;
   color: white;
