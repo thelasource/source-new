@@ -13,13 +13,8 @@
 
 $term_id = new_source_get_edition_id();
 $edition_name = new_source_get_edition_name();
-
-
-// $edition->name
-// $edition->description
-// $edition->slug
-// $edition->term_id		
-		?>
+	
+	?>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title><?php wp_title( '|', true, 'right' ); echo " | ".$edition_name; ?></title>
@@ -39,7 +34,8 @@ $edition_name = new_source_get_edition_name();
 	<div id="topbar-left" class="topbar-left">
 		<img src="<?php echo get_stylesheet_directory_uri(); ?>/brand/source_icon_white.png"/>
 		<span class="topbar-language"><a href="<?php echo esc_url( home_url( '/' ) ); ?>">ENGLISH</a></span> &middot; <span class="topbar-edition"><a class='expand-archive'><?php echo $edition_name; ?></a></span>
-<form method="post" class='archive'>
+			
+			<form method="post" class='archive'>
             	Select an issue: 
             	<?php
             	$volume_args = array(
@@ -48,17 +44,8 @@ $edition_name = new_source_get_edition_name();
             		'hierarchical'=>true,
             		'walker'=>new new_source_Walker_CategoryDropdown);
 
-            	wp_dropdown_categories($volume_args);
+            	wp_dropdown_categories( $volume_args );
             	?>
-            	<script type="text/javascript"><!--
-    				var dropdown = document.getElementById("ed");
-    				function onEditionChange() {
-						if ( dropdown.options[dropdown.selectedIndex].value) {
-							location.href =  "<?php echo get_option('home');?>/?edition="+dropdown.options[dropdown.selectedIndex].value;
-						}
-    				}
-    				dropdown.onchange = onEditionChange;
-			--></script>
         	</form>
 </div>
 		
