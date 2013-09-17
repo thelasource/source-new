@@ -7,34 +7,6 @@ jQuery( document ).ready( function( $ ) {
 	});
 });
 
-
-//customizer.js
-( function( $ ) { // Site title and description.
-	wp.customize( 'blogname', function( value ) {
-		value.bind( function( to ) {
-			$( '.site-title a' ).text( to );
-		} );
-	} );
-
-	wp.customize( 'blogdescription', function( value ) {
-		value.bind( function( to ) {
-			$( '.site-description' ).text( to );
-		} );
-	} );
-
-	wp.customize( 'header_textcolor', function( value ) { // Header text color.
-		value.bind( function( to ) {
-			if ( 'blank' == to ) {
-				$( '.site-title-group' ).hide();
-			} else {
-				$( '.site-title-group' ).show();
-				$( '.site-title a, .site-description' ).css( 'color', to );
-			}
-		} );
-	} );
-} )( jQuery );
-
-
 //navigation.js
 ( function() {
 	var container = document.getElementById( 'site-navigation' ),
