@@ -9,7 +9,13 @@
 		<h1 class="entry-title"><?php the_title(); ?></h1>
 
 		<div class="entry-meta">
-			<?php expound_posted_on(); ?>
+		<!--Author-->
+		<?php expound_posted_on(); ?> 
+		<!--Category-->
+		<?php expound_posted_in(); ?> //
+		<!--Issue-->
+		<?php $edition_name = new_source_get_edition_name(); echo $edition_name; ?>
+
 		</div><!-- .entry-meta -->
 	</header><!-- .entry-header -->
 
@@ -24,6 +30,5 @@
 	</div><!-- .entry-content -->
 
 	<footer class="entry-meta">
-		<?php expound_posted_in(); ?>
 	</footer><!-- .entry-meta -->
 </article><!-- #post-## -->

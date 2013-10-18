@@ -125,10 +125,10 @@ function expound_posted_on() {
 		$output_time = $regular_time;
 
 	// translators: 1: who, 2: when
-	printf( __( '%1$s / %2$s', 'expound' ),
+	printf( __( '%1$s // %2$s', 'expound' ),
 		sprintf( '<a class="author" rel="author" href="%s">%s</a>', esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ), get_the_author() ),
-		sprintf( '<a class="entry-date" href="%s">%s</a>', esc_url( get_permalink() ), $output_time )
-	);
+		sprintf( '<!--<a class="entry-date" href="%s">%s</a>-->', esc_url( get_permalink() ), $output_time ) 
+	); 
 }
 endif;
 
@@ -147,13 +147,13 @@ function expound_posted_in() {
 
 	if ( ! is_single() ) {
 		// translators: 1: when, 2: where (category)
-		printf( __( '%1$s in %2$s.', 'expound' ),
-			sprintf( '<a class="entry-date" href="%s">%s</a>', esc_url( get_permalink() ), $output_time ),
+		printf( __( '%2$s', 'expound' ),
+			sprintf( '<!--<a class="entry-date" href="%s">%s</a>-->', esc_url( get_permalink() ), $output_time ),
 			get_the_category_list( ', ' )
 		);
 	} else {
 		// translators: 1: when, 2: where (category)
-		printf( __( '%1$s in %2$s.', 'expound' ),
+		printf( __( '%2$s', 'expound' ),
 			sprintf( '<a class="entry-date" href="%s">%s</a>', esc_url( get_permalink() ), esc_html( get_the_time( get_option( 'date_format' ) ) ) ),
 			get_the_category_list( ', ' )
 		);
