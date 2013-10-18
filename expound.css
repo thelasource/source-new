@@ -527,6 +527,32 @@ h3 {
   color: #3a3a3a;
   font-weight: 600;
 }
+/*Author Bio Box*/
+.author-bio {
+	overflow: hidden;
+	padding-left: 20px;
+	padding-top: 20px;
+	border-bottom: solid 1px #dddddd;
+}
+.author-bio img {
+	float: left;
+	margin: 20px 20px 0 20px;
+	
+}
+.author-title {
+	font-size: 16px;
+	margin-bottom: 0px;
+	margin-left: 20px;
+}
+.author-info {
+	margin-top: 15px;
+	margin-left: 20px;
+}
+.author-smicons ul {
+	list-style:none;
+	float:left;
+}
+	
 .blog .site-content .has-post-thumbnail .entry-thumbnail,
 .archive .site-content .has-post-thumbnail .entry-thumbnail,
 .search .site-content .has-post-thumbnail .entry-thumbnail {

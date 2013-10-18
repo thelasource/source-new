@@ -597,3 +597,18 @@ if ( ! function_exists('new_source_register_edition') ) {
 function new_source_display_edition($edition) {
 	
 }
+/*===================================================================================
+ * Add Author Links
+ * =================================================================================*/
+function add_to_author_profile( $contactmethods ) {
+	
+	$contactmethods['public_email'] = 'Public Email';
+	$contactmethods['rss_url'] = 'RSS URL';
+	$contactmethods['google_profile'] = 'Google Profile URL';
+	$contactmethods['twitter_profile'] = 'Twitter Profile URL';
+	$contactmethods['facebook_profile'] = 'Facebook Profile URL';
+	$contactmethods['linkedin_profile'] = 'Linkedin Profile URL';
+	
+	return $contactmethods;
+}
+add_filter( 'user_contactmethods', 'add_to_author_profile', 10, 1);
