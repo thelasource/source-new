@@ -75,3 +75,19 @@ if ( $featured_posts->have_posts() ) : // more than one? ?>
 <?php endif; // have_posts() inner ?>
 
 <?php endif; // have_posts() ?>
+
+
+<?php $special_posts = new_source_get_special_posts(); ?>
+<?php if( $special_posts->have_posts() ): ?>
+	<div class="featured-special">
+	<?php while ( $special_posts->have_posts() ) : $special_posts->the_post(); ?>
+	<?php if( in_category( array('spencies-view', 'le-grain-de-sel') ) ): ?>
+		<div class="article"> <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('medium'); ?></a> </div>
+	<?php else: ?>
+		<div class="article article-forum"><span class="special">Join the conversation</span> <a href="<?php the_permalink(); ?>"><span><?php the_title(); ?></span></a> </div>
+	<?php endif; ?>
+	
+	<?php endwhile; ?>
+		
+	</div>
+<?php endif; ?>

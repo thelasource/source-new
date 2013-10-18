@@ -50,9 +50,9 @@ $edition_name = new_source_get_edition_name();
 </div>
 		
 		<div id="topbar-right" class="topbar-right">retrouvez-nous:
-			<a href="http://www.facebook.com/thelasource" target="_blank"><i class="icon-facebook-rect"></i></a> 
+			<a href="http://www.facebook.com/thelasource" target="_blank"><i class="icon-facebook-squared"></i></a> 
 			<a href="http://twitter.com/thelasource" target="_blank"><i class="icon-twitter"></i></a>
-			<a href="mailto:info@thelasource.com" target="_blank"><i class="icon-mail-alt"></i></a>
+			<a href="mailto:info@thelasource.com" target="_blank"><i class="icon-mail"></i></a>
 			<a href="<?php bloginfo('rss_url'); ?> " target="_blank"><i class="icon-rss"></i></a>
 		</div>
 	</div>
