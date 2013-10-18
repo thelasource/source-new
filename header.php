@@ -11,8 +11,8 @@
 <head>
 <?php 
 
-$term_id = new_source_get_edition_id();
-$edition_name = new_source_get_edition_name();
+ $term_id = new_source_get_edition_id();
+ $edition_name = new_source_get_edition_name();
 	
 	?>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
@@ -33,7 +33,7 @@ $edition_name = new_source_get_edition_name();
 	<div id="topbar-content">
 	<div id="topbar-left" class="topbar-left">
 		<img src="<?php echo get_stylesheet_directory_uri(); ?>/brand/source_icon_white.png"/>
-		<span class="topbar-language"><a href="<?php echo esc_url( home_url( '/' ) ); ?>">ENGLISH</a></span> &middot; <span class="topbar-edition"><a class='expand-archive'><?php echo $edition_name; ?></a></span>
+		<span class="topbar-language"><a href="<?php echo esc_url( home_url( '/' ) ); ?>">ENGLISH</a></span> &middot; <span class="topbar-edition"><a class='expand-archive'><?php echo $edition_name; ?></a> &middot; <a href="#" ><i class="icon-download"></i> Download PDF</a></span>
 			
 			<form method="post" class='archive'>
             	Select an issue: 
