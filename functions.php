@@ -467,6 +467,7 @@ function new_source_get_featured_posts() {
  * @return void
  */
 function new_source_get_edition_id(){
+	
 	if( is_home() ):
 		return get_theme_mod( 'home_edition' );
 	elseif(  is_tax( 'edition' ) ) :
@@ -476,7 +477,12 @@ function new_source_get_edition_id(){
 	elseif( is_single() ):
 		global $post;
 		$terms =  get_the_terms( $post->ID, 'edition' );
+		
+		if( !$terms )
+			return get_theme_mod( 'home_edition' );
+			
 		$ids = array_keys( $terms );
+		
 		return $ids[0];
 	endif;
 }
