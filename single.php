@@ -16,14 +16,14 @@ get_header(); ?>
             
 <!--BEGIN .author-bio-->
 <div class="author-bio">
-			<h3 class="author-title">Written by <?php the_author_link(); ?></h3>
+			<h3 class="author-title"><?php the_author_link(); ?></h3>
 			<?php echo get_avatar( get_the_author_meta('email'), '90' ); ?>
             <div class="author-info">
 	<?php 
 		
 		$facebook_profile = get_the_author_meta( 'facebook_profile' );
 		if ( $facebook_profile && $facebook_profile != '' ) {
-			echo '<a href="' . esc_url($facebook_profile) . '"><i class="icon-facebook-rect"></i></a>';
+			echo '<a href="' . esc_url($facebook_profile) . '"><i class="icon-facebook-squared"></i></a>';
 		}
 		
 		$twitter_profile = get_the_author_meta( 'twitter_profile' );
@@ -43,7 +43,7 @@ get_header(); ?>
 	
 		$author_email = get_the_author_meta('public_email');
 		if ( $author_email && $author_email != '' ) {
-			echo '<a href="mailto:' . $author_email . '"><i class="icon-mail-alt"></i></a>';
+			echo '<a href="mailto:' . $author_email . '"><i class="icon-mail"></i></a>';
 		}
 		
 		$rss_url = get_the_author_meta( 'rss_url' );
