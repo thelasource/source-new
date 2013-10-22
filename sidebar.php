@@ -30,7 +30,7 @@
 		<?php do_action( 'before_sidebar' ); ?>
 		
 			<?php if( is_home() || is_front_page() ):
-		<?php if ( ! dynamic_sidebar( 'sidebar-1' ) ) : ?>
+				  if ( ! dynamic_sidebar( 'sidebar-1' ) ) : ?>
 
 			<aside id="search" class="widget widget_search">
 				<?php get_search_form(); ?>
