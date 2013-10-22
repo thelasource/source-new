@@ -112,6 +112,9 @@ function expound_setup() {
         'wp-head-callback'       => 'expound_header_style',
         'admin-head-callback'    => 'expound_admin_header_style',
 	) );
+	
+	
+	add_action( 'wp_head','new_souce_prefetch_link' );
 }
 endif; // expound_setup
 add_action( 'after_setup_theme', 'expound_setup' );
@@ -629,12 +632,71 @@ if ( ! function_exists('new_source_register_edition') ) {
 	add_action( 'init', 'new_source_register_edition', 0 );
 }
 
+/**
+ * new_source_display_edition function.
+ * 
+ * @access public
+ * @param mixed $edition
+ * @return void
+ */
 function new_source_display_edition($edition) {
+	
+	
+}
+
+/**
+ * new_souce_prefetch_link function.
+ * 
+ * @access public
+ * @return void
+ */
+function new_souce_prefetch_link(){
+	global $paged;
+	
+	if (is_archive() && ($paged > 1) && ( $paged < $wp_query->max_num_pages)) { ?>
+	<link rel="prefetch" href="<?php echo get_next_posts_page_link(); ?>">
+	<link rel="prerender" href="<?php echo get_next_posts_page_link(); ?>">
+	<?php } elseif (is_singular()) { ?>
+	<?php if( is_single() ) { 
+		$post_previous = get_adjacent_post( false, '', true );
+		$post_next = get_adjacent_post( false, '', false );
+		
+	?>
+	
+	<link rel="prefetch" href="<?php echo get_permalink( $post_previous ); ?>" />
+	<link rel="prerender" href="<?php echo get_permalink( $post_previous ); ?>" />
+	
+	<link rel="prefetch" href="<?php echo get_permalink( $post_next ); ?>" />
+	<link rel="prerender" href="<?php echo get_permalink( $post_next ); ?>" />
+	
+	<?php } ?>
+	<link rel="prefetch" href="<?php bloginfo('home'); ?>">
+	<link rel="prerender" href="<?php bloginfo('home'); ?>">
+	<?php 
+	} else if( is_home() || is_front_page() ){
+	
+		$featured_posts = new_source_get_featured_posts(); 
+		if ( $featured_posts->have_posts() ) : $featured_posts->the_post();
+			?>
+			<link rel="prefetch" href="<?php echo get_permalink(); ?>">
+			<link rel="prerender" href="<?php echo get_permalink(); ?>" />
+			<?php
+		endif;
+	
+	}
 	
 }
 /*===================================================================================
  * Add Author Links
  * =================================================================================*/
+
+/**
+ * add_to_author_profile function.
+ * 
+ * @access public
+ * @param mixed $contactmethods
+ * @return void
+ */
 function add_to_author_profile( $contactmethods ) {
 	
 	$contactmethods['public_email'] = 'Public Email';
