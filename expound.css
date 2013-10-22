@@ -546,6 +546,32 @@ h1,h2,h3 {
 	font-weight:600;
 }
 
+/*Author Bio Box*/
+.author-bio {
+	overflow: hidden;
+	padding-left: 20px;
+	padding-top: 20px;
+	border-bottom: solid 1px #dddddd;
+}
+.author-bio img {
+	float: left;
+	margin: 20px 20px 0 20px;
+	
+}
+.author-title {
+	font-size: 16px;
+	margin-bottom: 0px;
+	margin-left: 20px;
+}
+.author-info {
+	margin-top: 15px;
+	margin-left: 20px;
+}
+.author-smicons ul {
+	list-style:none;
+	float:left;
+}
+
 .blog .site-content .has-post-thumbnail .entry-thumbnail,.archive .site-content .has-post-thumbnail .entry-thumbnail,.search .site-content .has-post-thumbnail .entry-thumbnail {
 	float:left;
 }
@@ -676,26 +702,29 @@ h1,h2,h3 {
 }
 
 .featured-special{
-	margin: 0 10px 0 0;
+	clear: both;
+	padding: 0 30px;
+	border-bottom: 1px solid #CCC;
+	border-top: 1px solid #CCC;
+	background: #EDEDED;
 	position: relative;
 	overflow: hidden;
 }
 .featured-special .article{
-	
+	width: 25%;
+	float: left;
+	padding: 0;
+	position: relative;
 }
 .featured-special .article a{
 	
 }
 .featured-special .article img{
-	margin-top: 20px;
-	max-width: 250px;
-	height: auto;
+	width: auto;
+	height: 200px;
 }
 .article-forum {
 	background: #135E6B;
-}
-.article {
-	text-align: center;
 }
 .article .special{
 	position: absolute;
@@ -711,16 +740,16 @@ h1,h2,h3 {
 	line-height: 35px;
 	text-decoration: none;
 	vertical-align: middle;
-	padding:40px 20px 20px;
+	height: 200px;
+	padding:0 20px;
 	display: table;
-	font-family: 'Oswald',Arial,sans-serif; 
-	
 }
 .article-forum a span{
 	display: table-cell; 
 	vertical-align: middle; 
 	text-align: center; 
 }
+
 
 article:hover .entry-thumbnail img {
 	opacity:.9;
