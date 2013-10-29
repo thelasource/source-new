@@ -397,6 +397,49 @@ add_action( 'pre_get_posts', 'new_source_pre_get_posts' );
 
 
 /**
+ * new_source_is_volume function.
+ * 
+ * @access public
+ * @return bool
+ */
+function new_source_is_volume(){
+	
+	if( is_tax('edition') ):
+		$tax = get_queried_object_id();
+		$edition = get_term( $tax, 'edition');
+		if( 0 == $edition->parent )
+			return true;
+		return false;
+		
+	endif;
+	return false;
+}
+
+/**
+ * new_source_volume_editions function.
+ * 
+ * @access public
+ * @return void
+ */
+function new_source_volume_editions(){
+	// only display this on the volume pages
+	
+	
+
+}
+
+
+/**
+ * new_source_volume_sidebar function.
+ * 
+ * @access public
+ * @return void
+ */
+function new_source_volume_sidebar(){
+
+}
+
+/**
  * new_source_remove_selected function.
  * 
  * @access public

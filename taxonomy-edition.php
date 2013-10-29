@@ -11,14 +11,15 @@
  * @package Expound
  */
 
-get_header(); ?>
-
+get_header(); 
+?>
 	<?php if ( is_home() && ! is_paged() || is_tax('edition') ) : ?>
 		<?php do_action( 'expound_home_title' ); ?>
 	<?php elseif ( is_archive() || is_search() ) : // home & not paged ?>
 		<header class="page-header">
 			<h1 class="page-title">
 				<?php
+					
 					if ( is_category() ) {
 						printf( __( '%s', 'expound' ), '<span>' . single_cat_title( '', false ) . '</span>' );
 
@@ -68,14 +69,24 @@ get_header(); ?>
 	<?php endif; ?>
 
 	<?php
-		if ( is_home() && ! is_paged() || is_tax('edition')) // condition should be same as in pre_get_posts
+		// is_volume
+		if( new_source_is_volume() ):
+			
+		elseif ( is_home() && ! is_paged() || is_tax('edition')  ): // condition should be same as in pre_get_posts
 			get_template_part( 'featured-content' );
+		endif;
+		
 	?>
 
 	<div id="primary" class="content-area">
 		<div id="content" class="site-content" role="main">
-
-		<?php if ( have_posts() ) : ?>
+		<?php 
+		if( new_source_is_volume() ): 
+			
+			get_template_part( 'content', 'volume' );
+			
+		else:
+			if ( have_posts() ) : ?>
 
 			<?php /* Start the Loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
@@ -108,6 +119,6 @@ get_header(); ?>
 
 		</div><!-- #content -->
 	</div><!-- #primary -->
-
+	<?php endif; ?>
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

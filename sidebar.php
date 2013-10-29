@@ -6,7 +6,10 @@
  */
 ?>
 	<div id="secondary" class="widget-area" role="complementary">
-		<?php if( is_front_page() || is_tax('edition') ): 
+		<?php 
+		if( new_source_is_volume() ):
+			new_source_volume_sidebar();
+		elseif( is_front_page() || is_tax('edition')  ): 
 			$special_posts = new_source_get_special_posts(); ?>
 			<?php if( $special_posts->have_posts() ): ?>
 				<div class="featured-special">
