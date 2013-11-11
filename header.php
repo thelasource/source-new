@@ -42,6 +42,7 @@
             		'name'=>'ed',
             		'taxonomy'=>'edition',
             		'hierarchical'=>true,
+            		'selected'=>$term_id,
             		'walker'=>new new_source_Walker_CategoryDropdown);
 
             	wp_dropdown_categories( $volume_args );
