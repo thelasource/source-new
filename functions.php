@@ -415,6 +415,17 @@ function new_source_is_volume(){
 	return false;
 }
 
+function new_source_get_latest_edition(){
+	// not foolproof since it assumes that you never run into the situation of having defined
+	// two volumes without creating an issue in between
+	$editions = get_terms('edition','orderby=id&order=DESC&number=2');
+	if( 0 == $editions[0]->parent ):
+		$latest_edition = $editions[0];
+	$latest_edition = $editions[1];
+	endif;
+	return($latest_edition);
+}
+
 /**
  * new_source_volume_editions function.
  * 
@@ -694,6 +705,25 @@ if ( ! function_exists('new_source_register_edition') ) {
 function new_source_display_edition($edition) {
 	
 	
+}
+
+/**
+ * new_source_get_pdf function.
+ * 
+ * @access public
+ * @param string $language
+ * @return string
+ */
+// TODO: do not hardcode $path, instead get it from wordpress
+// TODO: either download PDF from currently viewed issue or latest issue
+function new_source_get_pdf($lang) {
+	$edition = get_term(new_source_get_edition_id(), 'edition');
+	// $edition = get_term( get_theme_mod( 'home_edition' ), 'edition' );
+	preg_match('/(?<=[Ii]ssue[-\s])\d+$/', $edition->name, $ed);
+	$volume = get_term( $edition->parent, 'edition');
+	preg_match('/(?<=[Vv]olume[-\s])\d+$/', $volume->name, $vol);
+	$path = '/media/vol' . $vol[0] . 'no' . $ed[0] . '_' . $lang. '_lowres.pdf';
+	return(home_url( $path));	
 }
 
 /**
