@@ -1294,8 +1294,10 @@ button:hover,input[type="button"]:hover,input[type="reset"]:hover,input[type="su
 	div#topbar-right {
 		display:none;
 	}
-	
-	
+
+	a.pdf-download {
+		display:none;
+	}
 }
 
 .admin-bar .topbar {
