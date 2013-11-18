@@ -740,6 +740,7 @@ h1,h2,h3 {
 }
 .article-forum {
 	background: #135E6B;
+	margin-bottom:40px;
 }
 .article .special{
 	position: absolute;
@@ -1082,6 +1083,9 @@ button:hover,input[type="button"]:hover,input[type="reset"]:hover,input[type="su
 		width:50%;
 	}
 	
+	.content-social i a {
+		font-size:16px;
+	}
 	.featured-content-secondary {
 		padding-top:20px;
 		padding-bottom:0;

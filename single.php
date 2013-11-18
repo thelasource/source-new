@@ -9,11 +9,13 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<div id="content" class="site-content" role="main">
+        
 
 		<?php while ( have_posts() ) : the_post(); ?>
+       
 
 			<?php get_template_part( 'content', 'single' ); ?>
-            
+    
 <!--BEGIN .author-bio-->
 <div class="author-bio">
 			<h3 class="author-title"><?php the_author_link(); ?></h3>
@@ -53,8 +55,8 @@ get_header(); ?>
 		
 	?>
 <p class="author-description"><?php the_author_meta('description'); ?></p>
-			</div>
-<!--END .author-bio-->
+            </div>
+            <!--END .author-bio-->
 </div>
             
 			<?php get_template_part( 'related-content' ); ?>
