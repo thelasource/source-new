@@ -60,7 +60,7 @@ function expound_setup() {
 	 * If you're building a theme based on Mag, use a find and replace
 	 * to change 'expound' to the name of your theme in all the template files
 	 */
-	load_theme_textdomain( 'expound', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'new-source', get_template_directory() . '/languages' );
 
 	/**
 	 * Add default posts and comments RSS feed links to head
@@ -86,7 +86,7 @@ function expound_setup() {
 	 * This theme uses wp_nav_menu() in one location.
 	 */
 	register_nav_menus( array(
-		'primary' => __( 'Primary Menu', 'expound' ),
+		'primary' => __( 'Primary Menu', 'new-source' ),
 	) );
 
 	/**
@@ -196,7 +196,7 @@ function expound_widgets_init() {
 
 // Area located before the header, use for ad.
 	register_sidebar( array(
-		'name' => __( 'Header Ad Place' ),
+		'name' => __( 'Header Ad Place','new-source' ),
 		'id' => 'header-widget-area',
 		'description' => __( 'An ad place, max width 728px' ),
 		'before_widget' => '',
@@ -218,7 +218,7 @@ function expound_widgets_init() {
 
 // Sidebar from Theme 
 	register_sidebar( array(
-		'name'          => __( 'Frontpage Sidebar', 'expound' ),
+		'name'          => __( 'Frontpage Sidebar', 'new-source' ),
 		'id'            => 'sidebar-1',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
@@ -798,3 +798,14 @@ function add_to_author_profile( $contactmethods ) {
 	return $contactmethods;
 }
 add_filter( 'user_contactmethods', 'add_to_author_profile', 10, 1);
+
+
+/** Gets post cat slug and looks for single-[cat slug].php and applies it **/
+
+add_filter('single_template', create_function(
+	'$the_template',
+	'foreach( (array) get_the_category() as $cat ) {
+		if ( file_exists(TEMPLATEPATH . "/single-{$cat->slug}.php") )
+		return TEMPLATEPATH . "/single-{$cat->slug}.php"; }
+	return $the_template;' )
+);

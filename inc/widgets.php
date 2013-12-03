@@ -42,7 +42,7 @@ class Feature_Post extends WP_Widget {
 			'post_info'               => '[post_date] ' . __( 'By', 'new-source' ) . ' [post_author_posts_link] [post_comments]',
 			'show_content'            => 'excerpt',
 			'content_limit'           => '',
-			'more_text'               => __( '[Read More…]', 'new-source' ),
+			'more_text'               => __( '[Read More]', 'new-source' ),
 			'extra_num'               => '',
 			'extra_title'             => '',
 			'more_from_category'      => '',

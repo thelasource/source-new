@@ -12,21 +12,27 @@
 		elseif( is_front_page() || is_tax('edition')  ): 
 			$special_posts = new_source_get_special_posts(); ?>
 			<?php if( $special_posts->have_posts() ): ?>
-				<div class="featured-special">
+				
 					<?php while ( $special_posts->have_posts() ) : $special_posts->the_post(); ?>
 					
-						<?php if( in_category( array( 'spencies-view', 'le-grain-de-sel' ) ) ): ?>
+						<?php if( !in_category( array( 'spencies-view', 'le-grain-de-sel' ) ) ): ?>
+                        
+                        
+						<div class="featured-special">
+							<div class="article article-forum"><span class="special">Join the conversation</span> <a href="<?php the_permalink(); ?>"><span><?php the_title(); ?></span></a> </div>
+                        </div>
+						<?php else: ?>
+						<div class="featured-comic">
+                        <?php if ( get_the_category() ) : ?>
+						<span class="home-comic-category"><?php the_category( ' // ' ); ?></span>
+						<?php endif; // get_the_category() ?>
 							
 							<div class="article"> <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('medium'); ?></a> </div>
-						
-						<?php else: ?>
-						
-							<div class="article article-forum"><span class="special">Join the conversation</span> <a href="<?php the_permalink(); ?>"><span><?php the_title(); ?></span></a> </div>
-						
+						</div>
 						<?php endif; ?>
 					
 					<?php endwhile; ?>
-				</div>
+				
 		    <?php endif; ?>
 		<?php endif; ?>
 		
