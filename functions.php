@@ -534,11 +534,11 @@ function new_source_get_featured_posts() {
  */
 function new_source_get_edition_id(){
 	
-	if( is_home() ):
+	if( is_home() || is_search() ||  is_page() ):
 		return get_theme_mod( 'home_edition' );
 	elseif(  is_tax( 'edition' ) ) :
 		return get_queried_object_id();
-	elseif( is_page()):
+	elseif( is_archive() ):
 		return get_theme_mod( 'home_edition' );
 	elseif( is_single() ):
 		global $post;
@@ -553,6 +553,12 @@ function new_source_get_edition_id(){
 	endif;
 }
 
+/**
+ * new_source_get_edition_name function.
+ * 
+ * @access public
+ * @return void
+ */
 function new_source_get_edition_name(){
 
 
