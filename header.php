@@ -85,12 +85,13 @@
 		<nav id="site-navigation" class="navigation-main" role="navigation">
 			<h1 class="menu-toggle"><?php _e( 'Menu', 'expound' ); ?></h1>
 			<div class="screen-reader-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'expound' ); ?>"><?php _e( 'Skip to content', 'expound' ); ?></a></div>
-
-			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'depth' => 3 ) ); ?>
-			<?php do_action( 'expound_navigation_after' ); ?>
-			<div id="search" class="menu_search">
-				<?php get_search_form(); ?>
-			</div><!-- #search-form -->
+			<div class="nav-menu">
+				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'depth' => 3 ) ); ?>
+				<?php do_action( 'expound_navigation_after' ); ?>
+				<div id="search" class="menu-search">
+					<?php get_search_form(); ?>
+				</div><!-- #search-form -->
+			</div>
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 	<div id="main" class="site-main">

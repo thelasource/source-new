@@ -6,7 +6,7 @@
 ( function() {
 	var container = document.getElementById( 'site-navigation' ),
 	    button    = container.getElementsByTagName( 'h1' )[0],
-	    menu      = container.getElementsByTagName( 'ul' )[0];
+	    menu      = container.getElementsByTagName( 'div' )[1];
 
 	if ( undefined == button || undefined == menu )
 		return false;
