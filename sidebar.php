@@ -19,7 +19,7 @@
                         
                         
 						<div class="featured-special">
-							<div class="article article-forum"><span class="special">Join the conversation</span> <a href="<?php the_permalink(); ?>"><span><?php the_title(); ?></span></a> </div>
+							<div class="article article-forum"><span class="special"><?php _e( 'Join the conversation', 'new-source');</span> <a href="<?php the_permalink(); ?>"><span><?php the_title(); ?></span></a> </div>
                         </div>
 						<?php else: ?>
 						<div class="featured-comic">
@@ -46,14 +46,14 @@
 			</aside>
 
 			<aside id="archives" class="widget">
-				<h1 class="widget-title"><?php _e( 'Archives', 'expound' ); ?></h1>
+				<h1 class="widget-title"><?php _e( 'Archives', 'new-source' ); ?></h1>
 				<ul>
 					<?php wp_get_archives( array( 'type' => 'monthly' ) ); ?>
 				</ul>
 			</aside>
 
 			<aside id="meta" class="widget">
-				<h1 class="widget-title"><?php _e( 'Meta', 'expound' ); ?></h1>
+				<h1 class="widget-title"><?php _e( 'Meta', 'new-source' ); ?></h1>
 				<ul>
 					<?php wp_register(); ?>
 					<li><?php wp_loginout(); ?></li>

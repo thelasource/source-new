@@ -52,7 +52,7 @@ class Taxonomy_Dropdown_Custom_Control extends WP_Customize_Control {
 	 */
 	public function __construct( $manager, $id, $args = array() ) {
 		
-		$this->statuses = array( '' => __( 'Default' ) );
+		$this->statuses = array( '' => __( 'Default', 'new-source' ) );
 		parent::__construct( $manager, $id, $args );
 	}
 	
@@ -71,7 +71,7 @@ class Taxonomy_Dropdown_Custom_Control extends WP_Customize_Control {
 		
 		// Set defaults
 		$this->defaults = array(
-			'show_option_none' => __( 'None' ),
+			'show_option_none' => __( 'None', 'new-source' ),
 			'orderby'          => 'name', 
 			'hide_empty'       => 0,
 			'id'               => $this->id,

@@ -17,7 +17,7 @@
 			
 			<header class="entry-header">
 				<h1 class="entry-title">
-					<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'expound' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark">
+					<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'new-source' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark">
 						<?php the_title(); ?>
 					</a>
 				</h1>
@@ -25,7 +25,7 @@
 	
 			<div class="entry-summary">
 				<?php the_excerpt(); ?>
-				<p><a class="button-primary" href="<?php the_permalink(); ?>"><?php _e( 'Continue reading &rarr;', 'expound' ); ?></a></p>
+				<p><a class="button-primary" href="<?php the_permalink(); ?>"><?php _e( 'Continue reading &rarr;', 'new-source' ); ?></a></p>
 			</div><!-- .entry-summary -->
 			
 			<div id="featured-ad" class="featured-adplace">
@@ -35,12 +35,12 @@
 	<?php } else { ?><!-- If there is no featured content ad -->
 	
 			<header class="entry-header no-featured-ad">
-				<h1 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'expound' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
+				<h1 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'new-source' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
 			</header><!-- .entry-header -->
 	
 			<div class="entry-summary no-featured-ad">
 				<?php the_excerpt(); ?>
-				<p><a class="button-primary" href="<?php the_permalink(); ?>"><?php _e( 'Continue reading &rarr;', 'expound' ); ?></a></p>
+				<p><a class="button-primary" href="<?php the_permalink(); ?>"><?php _e( 'Continue reading &rarr;', 'new-source' ); ?></a></p>
 			</div><!-- .entry-summary -->
 			
 	<?php }; ?>
@@ -73,7 +73,7 @@
 				<?php endif; ?>
 	
 				<header class="entry-header">
-					<h1 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'expound' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
+					<h1 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'new-source' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
 				</header><!-- .entry-header -->
 	
 				<div class="entry-summary">

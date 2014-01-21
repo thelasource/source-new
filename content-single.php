@@ -12,9 +12,10 @@
        
 		<div class="entry-meta">
         <div class="alignright content-social">
-            Share: <a href="http://facebook.com/share.php?u=<?php the_permalink() ?>&amp;t=<?php echo urlencode(the_title('','', false)) ?>" target="new" title="Share on Facebook"><i class="icon-facebook-squared"></i></a>
-            <a href="http://twitter.com/home?status=<?php the_title(); ?> <?php echo get_permalink($post->ID); ?>" target="new" title="Spread the word on Twitter"><i class="icon-twitter"></i></a>
-            <a href="https://plus.google.com/share?url=<?php the_permalink() ?>" target="new"title="Add to Google+"><i class="icon-gplus-squared"></i></a>
+        	
+            <?php _e('Share', 'new-source'); ?>: <a href="http://facebook.com/share.php?u=<?php the_permalink() ?>&amp;t=<?php echo urlencode(the_title('','', false)) ?>" target="new" title="<?php esc_attr_e('Share on Facebook', 'new-source'); ?>"><i class="icon-facebook-squared"></i></a>
+            <a href="http://twitter.com/home?status=<?php the_title(); ?> <?php echo get_permalink($post->ID); ?>" target="new" title="<?php esc_attr_e('Spread the word on Twitter', 'new-source'); ?>"><i class="icon-twitter"></i></a>
+            <a href="https://plus.google.com/share?url=<?php the_permalink(); ?>" target="new" title="<?php esc_attr_e('Add to Google+', 'new-source'); ?>"><i class="icon-gplus-squared"></i></a>
         </div>
 		<!--Author-->
 		<?php expound_posted_on(); ?> 
@@ -30,15 +31,14 @@
 		<?php the_content(); ?>
         
         <div class="entry-meta content-social">
-       		 Link to this article: <a href="<?php the_permalink() ?>" target="_blank" title="Link to this article"><?php the_permalink() ?></a> |
-            Share: <a href="http://facebook.com/share.php?u=<?php the_permalink() ?>&amp;t=<?php echo urlencode(the_title('','', false)) ?>" target="new" title="Share on Facebook"><i class="icon-facebook-squared"></i></a>
-            <a href="http://twitter.com/home?status=<?php the_title(); ?> <?php echo get_permalink($post->ID); ?>" target="new" title="Spread the word on Twitter"><i class="icon-twitter"></i></a>
-            <a href="https://plus.google.com/share?url=<?php the_permalink() ?>" target="new"title="Add to Google+"><i class="icon-gplus-squared"></i></a>
-        </div>
+       		 <?php _e('Link to this article', 'new-source'); ?>: <a href="<?php the_permalink() ?>" target="_blank" title="<?php esc_attr_e('Link to this article', 'new-source' );?>"><?php the_permalink() ?></a> |
+             <?php _e('Share', 'new-source'); ?>: <a href="http://facebook.com/share.php?u=<?php the_permalink() ?>&amp;t=<?php echo urlencode(the_title('','', false)) ?>" target="new" title="<?php esc_attr_e('Share on Facebook', 'new-source'); ?>"><i class="icon-facebook-squared"></i></a>
+            <a href="http://twitter.com/home?status=<?php the_title(); ?> <?php echo get_permalink($post->ID); ?>" target="new" title="<?php esc_attr_e('Spread the word on Twitter', 'new-source'); ?>"><i class="icon-twitter"></i></a>
+            <a href="https://plus.google.com/share?url=<?php the_permalink(); ?>" target="new" title="<?php esc_attr_e('Add to Google+', 'new-source'); ?>"><i class="icon-gplus-squared"></i></a>        </div>
      
 		<?php
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'expound' ),
+				'before' => '<div class="page-links">' . __( 'Pages:', 'new-source' ),
 				'after'  => '</div>',
 			) );
 		?>
