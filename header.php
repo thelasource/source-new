@@ -33,7 +33,7 @@
 	<div id="topbar-content">
 	<div id="topbar-left" class="topbar-left">
 		<img src="<?php echo get_stylesheet_directory_uri(); ?>/brand/source_icon_white.png"/>
-		<span class="topbar-language"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php _e( 'English','new-source');?></a></span> &middot; <span class="topbar-edition"><a class='expand-archive'><?php echo $edition_name; ?></a> &middot; <a class="pdf-download" href=<?php echo new_source_get_pdf( __( 'English', 'new-source' )  ) ?> ><i class="icon-download"></i> <?php _e('Download PDF','new-source');?> </a></span>
+		<span class="topbar-language"><a href="/<?php _e('fr','new-source'); ?>"><?php _e( 'Français','new-source');?></a></span> &middot; <span class="topbar-edition"><a class='expand-archive'><?php echo $edition_name; ?></a> &middot; <a class="pdf-download" href=<?php echo new_source_get_pdf( __( 'English', 'new-source' )  ) ?> ><i class="icon-download"></i> <?php _e('Download PDF','new-source');?> </a></span>
 			
 			<form method="post" class='archive'>
             	Select an issue: 

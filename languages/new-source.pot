@@ -207,8 +207,17 @@ msgid "Linkedin Profile URL"
 msgstr ""
 
 #: header.php:36
+msgid "French"
+msgstr ""
+
+#: header.php:36
 msgid "English"
 msgstr ""
+
+#: header.php:36
+msgid "fr"
+msgstr ""
+
 
 #: header.php:36
 msgid "Download PDF"
