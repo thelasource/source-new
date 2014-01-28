@@ -718,14 +718,15 @@ function new_source_get_pdf( $lang ) {
 		$edition = get_term( get_theme_mod( 'home_edition' ), 'edition' );
 	elseif( 0==$edition->parent):
 		$args = 'orderby=id&parent=' . $edition->term_id . '&order=ASC&number=1';
-		$edition = get_terms('edition', $args)[0];
+		$editions = get_terms('edition', $args);
+		$edition = $editions[0];
 	endif;
 
 	preg_match('/(?<=[Ii]ssue[-\s])\d+$/', $edition->name, $ed);
 	$volume = get_term( $edition->parent, 'edition');
 	preg_match('/(?<=[Vv]olume[-\s])\d+$/', $volume->name, $vol);
 	$path = '/media/vol' . $vol[0] . 'no' . $ed[0] . '_' . $lang . '_lowres.pdf';
-	return(home_url( $path));
+	return( $path );
 }
 
 /**

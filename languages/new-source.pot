@@ -36,6 +36,9 @@ msgstr ""
 msgid "Comment navigation"
 msgstr ""
 
+msgid "Français"
+msgstr ""
+
 #: comments.php:37
 #: comments.php:57
 msgid "&larr; Older Comments"

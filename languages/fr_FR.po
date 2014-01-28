@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Source New v1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2014-01-21 07:24:47+0000\n"
+"PO-Revision-Date: 2014-01-21 07:45:11+0000\n"
 "Last-Translator: admin <enej.bajgoric@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -267,32 +267,32 @@ msgstr ""
 msgid "Choose from the most used edition"
 msgstr ""
 
-#: functions.php:786
+#: functions.php:787
 #@ new-source
 msgid "Public Email"
 msgstr "Courriel publique"
 
-#: functions.php:787
+#: functions.php:788
 #@ new-source
 msgid "RSS URL"
 msgstr ""
 
-#: functions.php:788
+#: functions.php:789
 #@ new-source
 msgid "Google Profile URL"
 msgstr ""
 
-#: functions.php:789
+#: functions.php:790
 #@ new-source
 msgid "Twitter Profile URL"
 msgstr ""
 
-#: functions.php:790
+#: functions.php:791
 #@ new-source
 msgid "Facebook Profile URL"
 msgstr ""
 
-#: functions.php:791
+#: functions.php:792
 #@ new-source
 msgid "Linkedin Profile URL"
 msgstr ""
@@ -801,6 +801,6 @@ msgstr "en"
 
 #: header.php:36
 #@ new-source
-msgid "French"
-msgstr "Français\n"
+msgid "Français"
+msgstr "English"
 

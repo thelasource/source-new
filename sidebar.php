@@ -19,7 +19,7 @@
                         
                         
 						<div class="featured-special">
-							<div class="article article-forum"><span class="special"><?php _e( 'Join the conversation', 'new-source');</span> <a href="<?php the_permalink(); ?>"><span><?php the_title(); ?></span></a> </div>
+							<div class="article article-forum"><span class="special"><?php _e( 'Join the conversation', 'new-source');?></span> <a href="<?php the_permalink(); ?>"><span><?php the_title(); ?></span></a> </div>
                         </div>
 						<?php else: ?>
 						<div class="featured-comic">
