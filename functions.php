@@ -499,7 +499,6 @@ function expound_get_featured_posts() {
 	return new WP_Query( $args );
 }
 
-
 /**
  * Returns a new WP_Query with featured posts.
  */
@@ -534,11 +533,11 @@ function new_source_get_featured_posts() {
  */
 function new_source_get_edition_id(){
 	
-	if( is_home() || is_search() ||  is_page() ):
+	if( is_home() ):
 		return get_theme_mod( 'home_edition' );
 	elseif(  is_tax( 'edition' ) ) :
 		return get_queried_object_id();
-	elseif( is_archive() ):
+	elseif( is_page()):
 		return get_theme_mod( 'home_edition' );
 	elseif( is_single() ):
 		global $post;
@@ -553,12 +552,6 @@ function new_source_get_edition_id(){
 	endif;
 }
 
-/**
- * new_source_get_edition_name function.
- * 
- * @access public
- * @return void
- */
 function new_source_get_edition_name(){
 
 
