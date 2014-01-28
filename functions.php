@@ -227,7 +227,7 @@ function expound_widgets_init() {
 	) );
 	// Sidebar from Theme 
 	register_sidebar( array(
-		'name'          => __( 'Sidebar', 'expound' ),
+		'name'          => __( 'Sidebar', 'new-source' ),
 		'id'            => 'sidebar-2',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
@@ -594,17 +594,6 @@ function expound_get_related_posts() {
 }
 
 /**
- * Footer credits.
- */
-function expound_display_credits() {
-	$text = '<a href="http://wordpress.org/" rel="generator">' . sprintf( __( 'Proudly powered by %s', 'expound' ), 'WordPress' ) . '</a>';
-	$text .= '<span class="sep"> | </span>';
-	$text .= sprintf( __( 'Theme: %1$s by %2$s', 'expound' ), 'expound', '<a href="http://kovshenin.com/" rel="designer">Konstantin Kovshenin</a>' );
-	echo apply_filters( 'expound_credits_text', $text );
-}
-add_action( 'expound_credits', 'expound_display_credits' );
-
-/**
  * Decrease caption width for non-full-width images. Pixelus perfectus!
  */
 function expound_shortcode_atts_caption( $attr ) {
@@ -701,7 +690,7 @@ if ( ! function_exists('new_source_register_edition') ) {
  * @param mixed $edition
  * @return void
  */
-function new_source_display_edition($edition) {
+function new_source_display_edition( $edition ) {
 	
 	
 }
@@ -715,21 +704,22 @@ function new_source_display_edition($edition) {
  */
 // TODO: do not hardcode $path, instead get it from wordpress
 // TODO: either download PDF from currently viewed issue or latest issue
-function new_source_get_pdf($lang) {
+function new_source_get_pdf( $lang ) {
 	$edition = get_term(new_source_get_edition_id(), 'edition');
 
 	if ( !array_key_exists('parent', $edition) ):
 		$edition = get_term( get_theme_mod( 'home_edition' ), 'edition' );
 	elseif( 0==$edition->parent):
 		$args = 'orderby=id&parent=' . $edition->term_id . '&order=ASC&number=1';
-		$edition = get_terms('edition', $args)[0];
+		$editions = get_terms('edition', $args);
+		$edition = $editions[0];
 	endif;
 
 	preg_match('/(?<=[Ii]ssue[-\s])\d+$/', $edition->name, $ed);
 	$volume = get_term( $edition->parent, 'edition');
 	preg_match('/(?<=[Vv]olume[-\s])\d+$/', $volume->name, $vol);
 	$path = '/media/vol' . $vol[0] . 'no' . $ed[0] . '_' . $lang . '_lowres.pdf';
-	return(home_url( $path));
+	return( $path );
 }
 
 /**
@@ -787,12 +777,12 @@ function new_souce_prefetch_link(){
  */
 function add_to_author_profile( $contactmethods ) {
 	
-	$contactmethods['public_email'] = 'Public Email';
-	$contactmethods['rss_url'] = 'RSS URL';
-	$contactmethods['google_profile'] = 'Google Profile URL';
-	$contactmethods['twitter_profile'] = 'Twitter Profile URL';
-	$contactmethods['facebook_profile'] = 'Facebook Profile URL';
-	$contactmethods['linkedin_profile'] = 'Linkedin Profile URL';
+	$contactmethods['public_email'] = __('Public Email','new-source' );
+	$contactmethods['rss_url'] = __('RSS URL','new-source' );
+	$contactmethods['google_profile'] = __('Google Profile URL','new-source' );
+	$contactmethods['twitter_profile'] = __('Twitter Profile URL','new-source' );
+	$contactmethods['facebook_profile'] = __('Facebook Profile URL','new-source' );
+	$contactmethods['linkedin_profile'] = __('Linkedin Profile URL','new-source' );
 	
 	return $contactmethods;
 }

@@ -63,7 +63,7 @@ function expound_wp_title( $title, $sep ) {
 
 	// Add a page number if necessary:
 	if ( $paged >= 2 || $page >= 2 )
-		$title .= " $sep " . sprintf( __( 'Page %s', 'expound' ), max( $paged, $page ) );
+		$title .= " $sep " . sprintf( __( 'Page %s', 'new-source' ), max( $paged, $page ) );
 
 	return $title;
 }

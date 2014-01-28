@@ -3,7 +3,7 @@
 body {
 	background:#333;
 /*background: #999;*/
-	font:13px/20px "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font:14px/20px Helvetica,Arial,sans-serif;
 	font-weight:300;
 }
 
@@ -58,8 +58,10 @@ a:hover {
 
 .site-footer {
 	clear:both;
-	padding:40px;
 	color:#aaa;
+}
+.site-footer .site-info{
+	padding:20px;
 }
 
 .site-footer h1 {
@@ -866,7 +868,7 @@ article:hover .entry-title a {
 	display:block;
 	background:#efefef;
 	margin:0;
-	padding:5px;
+	padding:10px 0 5px;
 	color:#999;
 }
 
@@ -1175,6 +1177,9 @@ button:hover,input[type="button"]:hover,input[type="reset"]:hover,input[type="su
 	#primary {
 		width:620px;
 	}
+	#secondary {
+		width:260px;
+	}
 	
 	.featured-content .has-post-thumbnail .entry-header,.featured-content .has-post-thumbnail .entry-summary,.featured-content .has-post-thumbnail .entry-meta {
 		margin-left:50%px;
@@ -1315,6 +1320,8 @@ button:hover,input[type="button"]:hover,input[type="reset"]:hover,input[type="su
 		margin-bottom:0;
 	}
 	
+	
+	
 }
 
 @media (max-width: 600px) {
@@ -1340,6 +1347,9 @@ button:hover,input[type="button"]:hover,input[type="reset"]:hover,input[type="su
 
 	a.pdf-download {
 		display:none;
+	}
+	.site-content article {
+		padding:20px 15px;
 	}
 }
 

@@ -16,7 +16,7 @@
 			<?php if ( dynamic_sidebar('footer-2') ) : else : endif; ?>
 			<?php if ( dynamic_sidebar('footer-3') ) : else : endif; ?>
             <div id="bottom-footer-widget">
-            <p class="copyright">&copy; 1999 – <?php echo date('Y'); ?> · La Source</p>
+            <p class="copyright">&copy; 1999 – <?php echo date('Y'); ?> · <?php bloginfo( 'name' ); ?></p>
             </div>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->

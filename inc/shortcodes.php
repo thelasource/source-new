@@ -3,6 +3,13 @@
 add_shortcode('shortlinks', 'source_shortlinks');
 add_shortcode('generate_QRcodes', 'source_QRcodes');
 
+/**
+ * source_shortlinks function.
+ * 
+ * @access public
+ * @param mixed $atts
+ * @return void
+ */
 function source_shortlinks($atts){
 	// Query the current edition
 	$term_id = get_theme_mod( 'home_edition' );
@@ -28,6 +35,12 @@ function source_shortlinks($atts){
 	return $html;
 }
 
+/**
+ * source_QRcodes function.
+ * 
+ * @access public
+ * @return void
+ */
 function source_QRcodes(){
 	
 	
@@ -54,8 +67,4 @@ function source_QRcodes(){
 			
 		}
 		return $html;
-}
-
-function source_generateQRcode(){
-
 }

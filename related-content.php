@@ -1,7 +1,7 @@
 <?php $related_posts = expound_get_related_posts(); ?>
 <?php if ( $related_posts->have_posts() ) : ?>
 <div class="related-content">
-	<h3 class="related-content-title"><?php _e( 'Related posts', 'expound' ); ?></h3>
+	<h3 class="related-content-title"><?php _e( 'Related posts', 'new-source' ); ?></h3>
 	<?php while ( $related_posts->have_posts() ) : $related_posts->the_post(); ?>
 
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -13,7 +13,7 @@
 			<?php endif; ?>
 
 			<header class="entry-header">
-				<h3 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'expound' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h3>
+				<h3 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'new-source' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h3>
 			</header><!-- .entry-header -->
 
 		</article>

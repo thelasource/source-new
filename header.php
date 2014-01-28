@@ -33,7 +33,7 @@
 	<div id="topbar-content">
 	<div id="topbar-left" class="topbar-left">
 		<img src="<?php echo get_stylesheet_directory_uri(); ?>/brand/source_icon_white.png"/>
-		<span class="topbar-language"><a href="<?php echo esc_url( home_url( '/' ) ); ?>">ENGLISH</a></span> &middot; <span class="topbar-edition"><a class='expand-archive'><?php echo $edition_name; ?></a> &middot; <a class="pdf-download" href=<?php echo new_source_get_pdf('English') ?> ><i class="icon-download"></i> <?php _e('Download PDF','new-source');?> </a></span>
+		<span class="topbar-language"><a href="/<?php _e('fr','new-source'); ?>"><?php _e( 'Français','new-source');?></a></span> &middot; <span class="topbar-edition"><a class='expand-archive'><?php echo $edition_name; ?></a> &middot; <a class="pdf-download" href=<?php echo new_source_get_pdf( __( 'English', 'new-source' )  ) ?> ><i class="icon-download"></i> <?php _e('Download PDF','new-source');?> </a></span>
 			
 			<form method="post" class='archive'>
             	Select an issue: 
@@ -50,7 +50,7 @@
         	</form>
 </div>
 		
-		<div id="topbar-right" class="topbar-right">retrouvez-nous:
+		<div id="topbar-right" class="topbar-right"><?php _e('Find us','new-source');?>:
 			<a href="http://www.facebook.com/thelasource" target="_blank"><i class="icon-facebook-squared"></i></a> 
 			<a href="http://twitter.com/thelasource" target="_blank"><i class="icon-twitter"></i></a>
 			<a href="mailto:info@thelasource.com" target="_blank"><i class="icon-mail"></i></a>
@@ -83,8 +83,8 @@
 		
 
 		<nav id="site-navigation" class="navigation-main" role="navigation">
-			<h1 class="menu-toggle"><?php _e( 'Menu', 'expound' ); ?></h1>
-			<div class="screen-reader-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'expound' ); ?>"><?php _e( 'Skip to content', 'expound' ); ?></a></div>
+			<h1 class="menu-toggle"><?php _e( 'Menu', 'new-source' ); ?></h1>
+			<div class="screen-reader-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'new-source' ); ?>"><?php _e( 'Skip to content', 'new-source' ); ?></a></div>
 			<div class="nav-menu">
 				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'depth' => 3 ) ); ?>
 				<?php do_action( 'expound_navigation_after' ); ?>

@@ -611,3 +611,8 @@ form.archive {
     padding-left: 10px;
     padding-bottom:20px;
 }
+
+#disqus_thread{
+	margin-left:20px;
+	width: 90%;
+}
