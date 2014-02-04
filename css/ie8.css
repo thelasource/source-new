@@ -1,0 +1,5 @@
+.featured-content .attachment-expound-featured  {
+
+	max-width: none!imporant; /* IE8 and below */
+	max-width: none !important;
+}
