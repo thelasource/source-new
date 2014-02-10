@@ -723,6 +723,51 @@ function new_source_get_pdf( $lang ) {
 }
 
 /**
+ * Start rewrite rules for the new source QR codes
+*/
+
+/**
+ * generate nicer looking QR links instead of ugly querystring variables e.g.,
+ *    www.thelasource.com/en/QR/3/12/cover
+ * instead of
+ *    www.thelasource.com/en/index.php?_volume=3&_category=12&_category=cover 
+ *
+*/
+add_action('init','new_source_add_QR_rewrite');
+function new_source_add_QR_rewrite(){
+	add_rewrite_rule('^QR/([^/]*)/([^/]*)/([^/]*)/?',
+	'index.php?_volume=$matches[1]&_edition=$matches[2]&_category=$matches[3]','top');
+	add_rewrite_tag('%_volume%','([^&]+)');
+	add_rewrite_tag('%_edition%','([^&]+)');
+	add_rewrite_tag('%_category%','([^&]+)');
+}
+
+// Retrieve the QR redirect URL
+function new_source_redirect_QR() {
+	global $wp_query;
+
+	if( isset($wp_query->query_vars['_volume'])) {
+		$vol = get_query_var('_volume');
+		wp_redirect( 'http://www.google.com' ); 
+		exit;
+	}
+	else{
+		$test = $wp_query->query_vars['order'];
+		echo '<pre>';
+		var_dump($wp_query->query_vars['order']);
+		var_dump(get_query_var('order'));
+		var_dump(get_query_var('order'));
+		echo '</pre>';
+	}
+}
+// Hook the function into template_redirect
+add_action( 'template_redirect', 'new_source_redirect_QR');
+
+/**
+ * End rewrite rules for the new source QR codes
+*/
+
+/**
  * new_souce_prefetch_link function.
  * 
  * @access public
