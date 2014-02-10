@@ -1,0 +1,10 @@
+.screen-reader-text{
+	display: none;
+}
+.nav-menu{
+	z-index: 2;
+}
+#masthead{
+	z-index: 2;
+	position: relative;
+}

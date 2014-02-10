@@ -23,6 +23,12 @@
 <!--[if lt IE 9]>
 <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
 <![endif]-->
+<!--[if IE 8]>
+<link href="<?php echo get_template_directory_uri(); ?>/css/ie8.css" rel="stylesheet" type="text/css">
+<![endif]-->
+<!--[if lte IE 7]>
+<link href="<?php echo get_template_directory_uri(); ?>/css/ie7.css" rel="stylesheet" type="text/css">
+<![endif]-->
 <link href="http://fonts.googleapis.com/css?family=Oswald" rel="stylesheet" type="text/css">
 <?php wp_head(); ?>
 </head>
