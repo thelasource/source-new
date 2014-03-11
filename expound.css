@@ -1331,8 +1331,16 @@ button:hover,input[type="button"]:hover,input[type="reset"]:hover,input[type="su
 	display:none;
 }
 
+.content-social {
+	margin-top:-5px;
+}
+
 .content-social a i {
 		font-size:18px;
+}
+
+.link-to-article{
+	margin-top:20px;
 }
 	
 @media (max-width: 1080px) {
