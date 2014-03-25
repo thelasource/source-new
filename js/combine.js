@@ -60,7 +60,7 @@
 	var dropdown = document.getElementById("ed");
 	function onEditionChange() {
 		if ( dropdown.options[dropdown.selectedIndex].value) {
-			location.href =  "?edition="+dropdown.options[dropdown.selectedIndex].value;
+			location.href =  combine_data.home + "/?edition=" + dropdown.options[dropdown.selectedIndex].value;
 		}
 	}
 	dropdown.onchange = onEditionChange;
