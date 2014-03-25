@@ -513,6 +513,10 @@ h1,h2,h3
 	font-family:'Oswald',Arial,sans-serif;
 }
 
+h4 {
+	font-weight:bold;
+}
+
 .site-content .entry-content h1,.site-content .comment-content h1,#tinymce h1
 {
 	font-size:34px;
