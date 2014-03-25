@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Source New v1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2014-01-21 07:45:11+0000\n"
+"PO-Revision-Date: 2014-03-04 04:06:46+0000\n"
 "Last-Translator: admin <enej.bajgoric@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -190,134 +190,129 @@ msgstr ""
 msgid "footer3 widget area"
 msgstr ""
 
-#: functions.php:645
+#: functions.php:638
 #@ textdomain
 msgid "Current Edition"
 msgstr ""
 
-#: functions.php:662
+#: functions.php:655
 #@ new-source
 msgctxt "Taxonomy General Name"
 msgid "editions"
 msgstr "éditions"
 
-#: functions.php:663
+#: functions.php:656
 #@ new-source
 msgctxt "Taxonomy Singular Name"
 msgid "edition"
 msgstr "édition"
 
-#: functions.php:664
+#: functions.php:657
 #@ new-source
 msgid "Edition"
 msgstr "Édition"
 
-#: functions.php:665
+#: functions.php:658
 #@ new-source
 msgid "All Editions"
 msgstr "Toutes les éditions"
 
-#: functions.php:666
+#: functions.php:659
 #@ new-source
 msgid "Parent Edition"
 msgstr ""
 
-#: functions.php:667
+#: functions.php:660
 #@ new-source
 msgid "Parent Edition:"
 msgstr ""
 
-#: functions.php:668
+#: functions.php:661
 #@ new-source
 msgid "New Edition Name"
 msgstr ""
 
-#: functions.php:669
+#: functions.php:662
 #@ new-source
 msgid "Add New Edition"
 msgstr ""
 
-#: functions.php:670
+#: functions.php:663
 #@ new-source
 msgid "Edit Edition"
 msgstr ""
 
-#: functions.php:671
+#: functions.php:664
 #@ new-source
 msgid "Update Edition"
 msgstr ""
 
-#: functions.php:672
+#: functions.php:665
 #@ new-source
 msgid "Separate editions with commas"
 msgstr ""
 
-#: functions.php:673
+#: functions.php:666
 #@ new-source
 msgid "Search edition"
 msgstr ""
 
-#: functions.php:674
+#: functions.php:667
 #@ new-source
 msgid "Add or remove edition"
 msgstr ""
 
-#: functions.php:675
+#: functions.php:668
 #@ new-source
 msgid "Choose from the most used edition"
 msgstr ""
 
-#: functions.php:787
+#: functions.php:827
 #@ new-source
 msgid "Public Email"
 msgstr "Courriel publique"
 
-#: functions.php:788
+#: functions.php:828
 #@ new-source
 msgid "RSS URL"
 msgstr ""
 
-#: functions.php:789
+#: functions.php:829
 #@ new-source
 msgid "Google Profile URL"
 msgstr ""
 
-#: functions.php:790
+#: functions.php:830
 #@ new-source
 msgid "Twitter Profile URL"
 msgstr ""
 
-#: functions.php:791
+#: functions.php:831
 #@ new-source
 msgid "Facebook Profile URL"
 msgstr ""
 
-#: functions.php:792
+#: functions.php:832
 #@ new-source
 msgid "Linkedin Profile URL"
 msgstr ""
 
-#: header.php:36
-#@ new-source
-msgid "English"
-msgstr "Anglais"
-
-#: header.php:36
+#: header.php:42
 #@ new-source
 msgid "Download PDF"
 msgstr "Téléchargez le PDF"
 
-#: header.php:53
+#: header.php:59
 #@ new-source
 msgid "Find us"
 msgstr "Trouvez nous"
 
-#: header.php:86
+#: header.php:92
 #@ new-source
 msgid "Menu"
 msgstr ""
 
-#: header.php:87
+#: header.php:93
 #@ new-source
 msgid "Skip to content"
 msgstr "Passez au contenu"
@@ -794,13 +789,18 @@ msgstr ""
 msgid "%s"
 msgstr ""
 
-#: header.php:36
+#: header.php:42
 #@ new-source
 msgid "fr"
 msgstr "en"
 
-#: header.php:36
+#: header.php:42
 #@ new-source
 msgid "Français"
 msgstr "English"
+
+#: header.php:42
+#@ new-source
+msgid "English_lowres"
+msgstr "French_lowres"
 
