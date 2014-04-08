@@ -706,7 +706,8 @@ function new_source_display_edition( $edition ) {
 // TODO: do not hardcode $path, instead get it from wordpress
 // TODO: either download PDF from currently viewed issue or latest issue
 function new_source_get_pdf( $lang ) {
-	$edition = get_term(new_source_get_edition_id(), 'edition');
+
+	$edition = get_term( new_source_get_edition_id(), 'edition' );
 
 	if ( !array_key_exists('parent', $edition) ):
 		$edition = get_term( get_theme_mod( 'home_edition' ), 'edition' );
@@ -715,13 +716,64 @@ function new_source_get_pdf( $lang ) {
 		$editions = get_terms('edition', $args);
 		$edition = $editions[0];
 	endif;
+	
+	
+	
+	$edition_num = str_pad( filter_var( $edition->name, FILTER_SANITIZE_NUMBER_INT ), 2, '0', STR_PAD_LEFT ) ;
 
-	preg_match('/(?<=[Ii]ssue[-\s])\d+$/', $edition->name, $ed);
-	$volume = get_term( $edition->parent, 'edition');
-	preg_match('/(?<=[Vv]olume[-\s])\d+$/', $volume->name, $vol);
-	$path = '/media/vol' . $vol[0] . 'no' . $ed[0] . '_' . $lang . '_lowres.pdf';
+	$volume = get_term( $edition->parent, 'edition' );
+	
+	$volume_number = filter_var( $volume->name, FILTER_SANITIZE_NUMBER_INT );
+	$path = '/media/vol' . $volume_number . 'no' .  $edition_num . '_' . $lang . '.pdf';
 	return( $path );
 }
+
+/**
+ * Start rewrite rules for the new source QR codes
+*/
+
+/**
+ * generate nicer looking QR links instead of ugly querystring variables e.g.,
+ *    www.thelasource.com/en/QR/3/12/cover
+ * instead of
+ *    www.thelasource.com/en/index.php?_volume=3&_category=12&_category=cover 
+ *
+*/
+add_action('init','new_source_add_QR_rewrite');
+function new_source_add_QR_rewrite(){
+	add_rewrite_rule('^QR/([^/]*)/([^/]*)/([^/]*)/?',
+	'index.php?_volume=$matches[1]&_edition=$matches[2]&_category=$matches[3]','top');
+	add_rewrite_tag('%_volume%','([^&]+)');
+	add_rewrite_tag('%_edition%','([^&]+)');
+	add_rewrite_tag('%_category%','([^&]+)');
+}
+
+/*
+// Retrieve the QR redirect URL
+function new_source_redirect_QR() {
+	global $wp_query;
+
+	if( isset($wp_query->query_vars['_volume'])) {
+		$vol = get_query_var('_volume');
+		wp_redirect( 'http://www.google.com' ); 
+		exit;
+	}
+	else{
+		$test = $wp_query->query_vars['order'];
+		echo '<pre>';
+		var_dump($wp_query->query_vars['order']);
+		var_dump(get_query_var('order'));
+		var_dump(get_query_var('order'));
+		echo '</pre>';
+	}
+}
+*/
+// Hook the function into template_redirect
+// add_action( 'template_redirect', 'new_source_redirect_QR');
+
+/**
+ * End rewrite rules for the new source QR codes
+*/
 
 /**
  * new_souce_prefetch_link function.
@@ -778,12 +830,12 @@ function new_souce_prefetch_link(){
  */
 function add_to_author_profile( $contactmethods ) {
 	
-	$contactmethods['public_email'] = __('Public Email','new-source' );
-	$contactmethods['rss_url'] = __('RSS URL','new-source' );
-	$contactmethods['google_profile'] = __('Google Profile URL','new-source' );
-	$contactmethods['twitter_profile'] = __('Twitter Profile URL','new-source' );
-	$contactmethods['facebook_profile'] = __('Facebook Profile URL','new-source' );
-	$contactmethods['linkedin_profile'] = __('Linkedin Profile URL','new-source' );
+	$contactmethods['public_email'] 	= 	__( 'Public Email','new-source' );
+	$contactmethods['rss_url'] 			= 	__( 'RSS URL','new-source' );
+	$contactmethods['google_profile'] 	= 	__( 'Google Profile URL','new-source' );
+	$contactmethods['twitter_profile'] 	= 	__( 'Twitter Profile URL','new-source' );
+	$contactmethods['facebook_profile'] = 	__( 'Facebook Profile URL','new-source' );
+	$contactmethods['linkedin_profile'] = 	__( 'Linkedin Profile URL','new-source' );
 	
 	return $contactmethods;
 }
@@ -791,7 +843,7 @@ add_filter( 'user_contactmethods', 'add_to_author_profile', 10, 1);
 
 
 /** Gets post cat slug and looks for single-[cat slug].php and applies it **/
-
+/*
 add_filter('single_template', create_function(
 	'$the_template',
 	'foreach( (array) get_the_category() as $cat ) {
@@ -799,3 +851,4 @@ add_filter('single_template', create_function(
 		return TEMPLATEPATH . "/single-{$cat->slug}.php"; }
 	return $the_template;' )
 );
+*/
